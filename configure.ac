@@ -22,7 +22,7 @@ PKG_CHECK_MODULES(GLIB, glib-2.0 dbus-glib-1)
 AC_SUBST(GLIB_CFLAGS)
 AC_SUBST(GLIB_LIBS)
 
-PKG_CHECK_MODULES(DAEMON, glib-2.0 dbus-glib-1 gmodule-2.0 polkit >= 0.8 polkit-dbus)
+PKG_CHECK_MODULES(DAEMON, glib-2.0 dbus-glib-1 gmodule-2.0 polkit-gobject-1 >= 0.91)
 AC_SUBST(DAEMON_LIBS)
 AC_SUBST(DAEMON_CFLAGS)
 

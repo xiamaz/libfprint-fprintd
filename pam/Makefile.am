@@ -1,12 +1,12 @@
 if HAVE_PAM
 
-pammod_PROGRAMS = pam_fprintd.so
+pammod_LTLIBRARIES = pam_fprintd.la
 pammoddir=$(libdir)/security
 
-pam_fprintd_so_SOURCES = pam_fprintd.c $(MARSHALFILES)
-pam_fprintd_so_CFLAGS = -fPIC $(WARN_CFLAGS) $(GLIB_CFLAGS)
-pam_fprintd_so_LDFLAGS = -shared
-pam_fprintd_so_LDADD = $(PAM_LIBS) $(GLIB_LIBS)
+pam_fprintd_la_SOURCES = pam_fprintd.c $(MARSHALFILES)
+pam_fprintd_la_CFLAGS = -fPIC $(WARN_CFLAGS) $(GLIB_CFLAGS)
+pam_fprintd_la_LDFLAGS = -avoid-version -module
+pam_fprintd_la_LIBADD = $(PAM_LIBS) $(GLIB_LIBS)
 
 MARSHALFILES = marshal.c marshal.h
 GLIB_GENMARSHAL=`pkg-config --variable=glib_genmarshal glib-2.0`

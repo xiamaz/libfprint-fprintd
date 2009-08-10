@@ -23,7 +23,6 @@
 #include <dbus/dbus-glib-lowlevel.h>
 #include <glib/gi18n.h>
 #include <polkit/polkit.h>
-#include <polkit-dbus/polkit-dbus.h>
 #include <libfprint/fprint.h>
 
 #include <sys/types.h>
@@ -96,7 +95,7 @@ struct FprintDevicePrivate {
 	struct fp_dev *dev;
 	struct session_data *session;
 
-	PolKitContext *pol_ctx;
+	PolkitAuthority *auth;
 
 	/* The current user of the device, if claimed */
 	char *sender;
@@ -263,53 +262,13 @@ static void fprint_device_class_init(FprintDeviceClass *klass)
 		g_cclosure_marshal_VOID__STRING, G_TYPE_NONE, 1, G_TYPE_STRING);
 }
 
-static gboolean
-pk_io_watch_have_data (GIOChannel *channel, GIOCondition condition, gpointer user_data)
-{
-	int fd;
-	PolKitContext *pk_context = user_data;
-	fd = g_io_channel_unix_get_fd (channel);
-	polkit_context_io_func (pk_context, fd);
-	return TRUE;
-}
-
-static int 
-pk_io_add_watch (PolKitContext *pk_context, int fd)
-{
-	guint id = 0;
-	GIOChannel *channel;
-	channel = g_io_channel_unix_new (fd);
-	if (channel == NULL)
-		goto out;
-	id = g_io_add_watch (channel, G_IO_IN, pk_io_watch_have_data, pk_context);
-	if (id == 0) {
-		g_io_channel_unref (channel);
-		goto out;
-	}
-	g_io_channel_unref (channel);
-out:
-	return id;
-}
-
-static void 
-pk_io_remove_watch (PolKitContext *pk_context, int watch_id)
-{
-	g_source_remove (watch_id);
-}
-
 static void fprint_device_init(FprintDevice *device)
 {
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(device);
 	priv->id = ++last_id;
 
 	/* Setup PolicyKit */
-	priv->pol_ctx = polkit_context_new ();
-	polkit_context_set_io_watch_functions (priv->pol_ctx, pk_io_add_watch, pk_io_remove_watch);
-	if (!polkit_context_init (priv->pol_ctx, NULL)) {
-		g_critical ("cannot initialize libpolkit");
-		polkit_context_unref (priv->pol_ctx);
-		priv->pol_ctx = NULL;
-	}
+	priv->auth = polkit_authority_get ();
 	priv->clients = g_hash_table_new_full (g_str_hash,
 					       g_str_equal,
 					       g_free,
@@ -446,55 +405,39 @@ _fprint_device_check_polkit_for_action (FprintDevice *rdev, DBusGMethodInvocatio
 {
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(rdev);
 	const char *sender;
-	DBusError dbus_error;
-	PolKitCaller *pk_caller;
-	PolKitAction *pk_action;
-	PolKitResult pk_result;
-	uid_t uid;
+	PolkitSubject *subject;
+	PolkitAuthorizationResult *result;
+	GError *_error = NULL;
 
 	/* Check that caller is privileged */
 	sender = dbus_g_method_get_sender (context);
-	dbus_error_init (&dbus_error);
-	pk_caller = polkit_caller_new_from_dbus_name (
-	    dbus_g_connection_get_connection (fprintd_dbus_conn),
-	    sender, 
-	    &dbus_error);
-	if (pk_caller == NULL) {
-		g_set_error (error, FPRINT_ERROR,
-			     FPRINT_ERROR_INTERNAL,
-			     "Error getting information about caller: %s: %s",
-			     dbus_error.name, dbus_error.message);
-		dbus_error_free (&dbus_error);
-		return FALSE;
-	}
+	subject = polkit_system_bus_name_new (sender);
 
-	/* XXX Hack?
-	 * We'd like to allow root to set the username by default, so
-	 * it can authenticate users through PAM
-	 * https://bugzilla.redhat.com/show_bug.cgi?id=447266 */
-	if ((polkit_caller_get_uid (pk_caller, &uid) && uid == 0) &&
-	    (g_str_equal (action, "net.reactivated.fprint.device.setusername") ||
-	     g_str_equal (action, "net.reactivated.fprint.device.verify"))) {
-		polkit_caller_unref (pk_caller);
-		return TRUE;
-	}
+	result = polkit_authority_check_authorization_sync (priv->auth,
+                                                            subject,
+                                                            action,
+							    NULL,
+                                                            POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION,
+					                    NULL, &_error);
+	g_object_unref (subject);
 
-	pk_action = polkit_action_new ();
-	polkit_action_set_action_id (pk_action, action);
-	pk_result = polkit_context_is_caller_authorized (priv->pol_ctx, pk_action, pk_caller,
-							 TRUE, NULL);
-	polkit_caller_unref (pk_caller);
-	polkit_action_unref (pk_action);
-
-	if (pk_result != POLKIT_RESULT_YES) {
+	if (result == NULL) {
 		g_set_error (error, FPRINT_ERROR,
 			     FPRINT_ERROR_PERMISSION_DENIED,
-			     "%s %s <-- (action, result)",
-			     action,
-			     polkit_result_to_string_representation (pk_result));
-		dbus_error_free (&dbus_error);
+			     "Not Authorized: %s", _error->message);
+		g_error_free (_error);
 		return FALSE;
 	}
+
+	if (!polkit_authorization_result_get_is_authorized (result)) {
+		g_set_error (error, FPRINT_ERROR,
+			     FPRINT_ERROR_PERMISSION_DENIED,
+			     "Not Authorized: %s", action);
+		g_object_unref (result);
+		return FALSE;
+	}
+
+	g_object_unref (result);
 
 	return TRUE;
 }
