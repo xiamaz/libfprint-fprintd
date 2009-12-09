@@ -31,8 +31,10 @@ static void create_manager(void)
 	GError *error = NULL;
 
 	connection = dbus_g_bus_get(DBUS_BUS_SYSTEM, &error);
-	if (connection == NULL)
-		g_error("Failed to connect to session bus: %s", error->message);
+	if (connection == NULL) {
+		g_print("Failed to connect to session bus: %s\n", error->message);
+		exit (1);
+	}
 
 	manager = dbus_g_proxy_new_for_name(connection,
 		"net.reactivated.Fprint", "/net/reactivated/Fprint/Manager",
@@ -48,16 +50,20 @@ static void list_fingerprints(DBusGProxy *dev, const char *username)
 	guint i;
 
 	if (!net_reactivated_Fprint_Device_list_enrolled_fingers(dev, username, &fingers, &error)) {
-		if (dbus_g_error_has_name (error, "net.reactivated.Fprint.Error.NoEnrolledPrints") == FALSE)
-			g_error("ListEnrolledFingers failed: %s", error->message);
-		else
+		if (dbus_g_error_has_name (error, "net.reactivated.Fprint.Error.NoEnrolledPrints") == FALSE) {
+			g_print("ListEnrolledFingers failed: %s\n", error->message);
+			exit (1);
+		} else {
 			fingers = NULL;
+		}
 	}
 
 	p = dbus_g_proxy_new_from_proxy(dev, "org.freedesktop.DBus.Properties", NULL);
 	if (!dbus_g_proxy_call (p, "GetAll", &error, G_TYPE_STRING, "net.reactivated.Fprint.Device", G_TYPE_INVALID,
-			   dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE), &props, G_TYPE_INVALID))
-		g_error("GetAll on the Properties interface failed: %s", error->message);
+			   dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE), &props, G_TYPE_INVALID)) {
+		g_print("GetAll on the Properties interface failed: %s\n", error->message);
+		exit (1);
+	}
 
 	if (fingers == NULL || g_strv_length (fingers) == 0) {
 		g_print("User %s has no fingers enrolled for %s.\n", username, g_value_get_string (g_hash_table_lookup (props, "name")));
@@ -85,8 +91,10 @@ static void process_devices(char **argv)
 	char *path;
 	guint i;
 
-	if (!net_reactivated_Fprint_Manager_get_devices(manager, &devices, &error))
-		g_error("list_devices failed: %s", error->message);
+	if (!net_reactivated_Fprint_Manager_get_devices(manager, &devices, &error)) {
+		g_print("list_devices failed: %s\n", error->message);
+		exit (1);
+	}
 	
 	if (devices->len == 0) {
 		g_print("No devices found\n");

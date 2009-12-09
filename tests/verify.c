@@ -36,8 +36,10 @@ static void create_manager(void)
 	GError *error = NULL;
 
 	connection = dbus_g_bus_get(DBUS_BUS_SYSTEM, &error);
-	if (connection == NULL)
-		g_error("Failed to connect to session bus: %s", error->message);
+	if (connection == NULL) {
+		g_print("Failed to connect to session bus: %s\n", error->message);
+		exit (1);
+	}
 
 	manager = dbus_g_proxy_new_for_name(connection,
 		"net.reactivated.Fprint", "/net/reactivated/Fprint/Manager",
@@ -50,8 +52,10 @@ static DBusGProxy *open_device(const char *username)
 	gchar *path;
 	DBusGProxy *dev;
 
-	if (!net_reactivated_Fprint_Manager_get_default_device(manager, &path, &error))
-		g_error("list_devices failed: %s", error->message);
+	if (!net_reactivated_Fprint_Manager_get_default_device(manager, &path, &error)) {
+		g_print("list_devices failed: %s\n", error->message);
+		exit (1);
+	}
 	
 	if (path == NULL) {
 		g_print("No devices found\n");
@@ -66,8 +70,10 @@ static DBusGProxy *open_device(const char *username)
 	
 	g_free (path);
 
-	if (!net_reactivated_Fprint_Device_claim(dev, username, &error))
-		g_error("failed to claim device: %s", error->message);
+	if (!net_reactivated_Fprint_Device_claim(dev, username, &error)) {
+		g_print("failed to claim device: %s\n", error->message);
+		exit (1);
+	}
 
 	return dev;
 }
@@ -78,8 +84,10 @@ static void find_finger(DBusGProxy *dev, const char *username)
 	char **fingers;
 	guint i;
 
-	if (!net_reactivated_Fprint_Device_list_enrolled_fingers(dev, username, &fingers, &error))
-		g_error("ListEnrolledFingers failed: %s", error->message);
+	if (!net_reactivated_Fprint_Device_list_enrolled_fingers(dev, username, &fingers, &error)) {
+		g_print("ListEnrolledFingers failed: %s\n", error->message);
+		exit (1);
+	}
 
 	if (fingers == NULL || g_strv_length (fingers) == 0) {
 		g_print("No fingers enrolled for this device.\n");
@@ -122,8 +130,10 @@ static void do_verify(DBusGProxy *dev)
 	dbus_g_proxy_connect_signal(dev, "VerifyFingerSelected", G_CALLBACK(verify_finger_selected),
 		NULL, NULL);
 
-	if (!net_reactivated_Fprint_Device_verify_start(dev, finger_name, &error))
-		g_error("VerifyStart failed: %s", error->message);
+	if (!net_reactivated_Fprint_Device_verify_start(dev, finger_name, &error)) {
+		g_print("VerifyStart failed: %s\n", error->message);
+		exit (1);
+	}
 
 	while (!verify_completed)
 		g_main_context_iteration(NULL, TRUE);
@@ -131,15 +141,19 @@ static void do_verify(DBusGProxy *dev)
 	dbus_g_proxy_disconnect_signal(dev, "VerifyStatus", G_CALLBACK(verify_result), &verify_completed);
 	dbus_g_proxy_disconnect_signal(dev, "VerifyFingerSelected", G_CALLBACK(verify_finger_selected), NULL);
 
-	if (!net_reactivated_Fprint_Device_verify_stop(dev, &error))
-		g_error("VerifyStop failed: %s", error->message);
+	if (!net_reactivated_Fprint_Device_verify_stop(dev, &error)) {
+		g_print("VerifyStop failed: %s\n", error->message);
+		exit (1);
+	}
 }
 
 static void release_device(DBusGProxy *dev)
 {
 	GError *error = NULL;
-	if (!net_reactivated_Fprint_Device_release(dev, &error))
-		g_error("ReleaseDevice failed: %s", error->message);
+	if (!net_reactivated_Fprint_Device_release(dev, &error)) {
+		g_print("ReleaseDevice failed: %s\n", error->message);
+		exit (1);
+	}
 }
 
 static const GOptionEntry entries[] = {
