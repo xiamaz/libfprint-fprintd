@@ -18,6 +18,10 @@ polkit_DATA = $(polkit_in_files:.policy.in=.policy)
 confdir = $(sysconfdir)/
 conf_DATA = fprintd.conf
 
+man_MANS = fprintd.1
+fprintd.1: fprintd.pod
+	$(AM_V_GEN) pod2man -c "" -s 1 -q none -n fprintd -r freedesktop $< > $@
+
 EXTRA_DIST = $(dbus_services_in_files) $(dbus_conf_DATA) $(polkit_in_files) $(conf_DATA)
 CLEANFILES = $(polkit_DATA) $(dbus_services_DATA)
 
