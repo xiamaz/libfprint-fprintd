@@ -298,11 +298,10 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev)
 
 	while (ret == PAM_AUTH_ERR && data->max_tries > 0) {
 		GSource *source;
-		guint timeout_id;
 
 		/* Set up the timeout on our non-default context */
 		source = g_timeout_source_new_seconds (TIMEOUT);
-		timeout_id = g_source_attach (source, g_main_loop_get_context (loop));
+		g_source_attach (source, g_main_loop_get_context (loop));
 		g_source_set_callback (source, verify_timeout_cb, data, NULL);
 
 		data->timed_out = FALSE;
@@ -311,14 +310,14 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev)
 			D(pamh, "VerifyStart failed: %s", error->message);
 			g_error_free (error);
 
-			g_source_remove (timeout_id);
+			g_source_destroy (source);
 			g_source_unref (source);
 			break;
 		}
 
 		g_main_loop_run (loop);
 
-		g_source_remove (timeout_id);
+		g_source_destroy (source);
 		g_source_unref (source);
 
 		/* Ignore errors from VerifyStop */
