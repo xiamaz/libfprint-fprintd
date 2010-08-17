@@ -164,7 +164,7 @@ static void pollfd_removed_cb(int fd)
 		fdsource->pollfds = g_slist_delete_link(fdsource->pollfds, elem);
 		return;
 	} while ((elem = g_slist_next(elem)));
-	
+
 	g_error("couldn't find fd %d in list\n", fd);
 }
 
@@ -324,7 +324,7 @@ int main(int argc, char **argv)
 
 	r = fp_init();
 	if (r < 0) {
-		g_error("fprint init failed with error %d\n", r);
+		g_warning("fprint init failed with error %d\n", r);
 		return r;
 	}
 
@@ -340,8 +340,10 @@ int main(int argc, char **argv)
 
 	/* Obtain a connection to the session bus */
 	fprintd_dbus_conn = dbus_g_bus_get(DBUS_BUS_SYSTEM, &error);
-	if (fprintd_dbus_conn == NULL)
-		g_error("Failed to open connection to bus: %s", error->message);
+	if (fprintd_dbus_conn == NULL) {
+		g_warning("Failed to open connection to bus: %s", error->message);
+		return 1;
+	}
 
 	/* create the one instance of the Manager object to be shared between
 	 * all fprintd users */
@@ -351,12 +353,13 @@ int main(int argc, char **argv)
 		DBUS_SERVICE_DBUS, DBUS_PATH_DBUS, DBUS_INTERFACE_DBUS);
 
 	if (!org_freedesktop_DBus_request_name(driver_proxy, FPRINT_SERVICE_NAME,
-			0, &request_name_ret, &error))
-		g_error("Failed to get name: %s", error->message);
+			0, &request_name_ret, &error)) {
+		g_warning("Failed to get name: %s", error->message);
+		return 1;
 
 	if (request_name_ret != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) {
-		g_error ("Got result code %u from requesting name", request_name_ret);
-		exit(1);
+		g_warning ("Got result code %u from requesting name", request_name_ret);
+		return 1;
 	}
 
 	g_message("D-Bus service launched with name: %s", FPRINT_SERVICE_NAME);
