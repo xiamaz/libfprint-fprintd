@@ -1,5 +1,5 @@
-AC_INIT([fprintd], [0.1])
-AM_INIT_AUTOMAKE
+AC_INIT([fprintd], [0.2.0])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2 no-dist-gzip check-news])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -45,10 +45,9 @@ AC_MSG_CHECKING(for PAM headers and library)
 AC_MSG_RESULT([$has_pam])
 
 
-AC_CHECK_PROG([POLKIT_POLICY_FILE_VALIDATE],
-	      [polkit-policy-file-validate], [polkit-policy-file-validate])
+AC_CHECK_PROG([XMLLINT], [xmllint], [xmllint])
+AC_CHECK_PROG([XSLTPROC], [xsltproc], [xsltproc])
 
-AC_PATH_PROG([XSLTPROC], [xsltproc])
 GTK_DOC_CHECK([1.3])
 
 AS_AC_EXPAND(DATADIR, $datadir)

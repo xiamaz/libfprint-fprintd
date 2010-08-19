@@ -22,10 +22,10 @@ man_MANS = fprintd.1
 fprintd.1: fprintd.pod
 	$(AM_V_GEN) pod2man -c "" -s 1 -q none -n fprintd -r freedesktop $< > $@
 
-EXTRA_DIST = $(dbus_services_in_files) $(dbus_conf_DATA) $(polkit_in_files) $(conf_DATA)
-CLEANFILES = $(polkit_DATA) $(dbus_services_DATA)
+EXTRA_DIST = $(dbus_services_in_files) $(dbus_conf_DATA) $(polkit_in_files) $(conf_DATA) fprintd.pod
+CLEANFILES = $(polkit_DATA) $(dbus_services_DATA) fprintd.1
 
 check:
-	$(POLKIT_POLICY_FILE_VALIDATE) $(polkit_DATA)
+	$(XMLLINT) $(polkit_DATA)
 
 

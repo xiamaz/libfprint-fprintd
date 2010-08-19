@@ -356,6 +356,7 @@ int main(int argc, char **argv)
 			0, &request_name_ret, &error)) {
 		g_warning("Failed to get name: %s", error->message);
 		return 1;
+	}
 
 	if (request_name_ret != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) {
 		g_warning ("Got result code %u from requesting name", request_name_ret);
