@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Khaled Hosny <khaledhosny@eglug.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-20 10:53+0000\n"
+"PO-Revision-Date: 2010-08-20 14:10+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Enroll new fingerprints"
+msgstr "تسجيل بصمات جديدة"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "الصلاحيات مطلوبة لتسجيل بصمات جديدة للمستخدمين الآخرين."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
+msgid "Privileges are required to enroll new fingerprints."
+msgstr "الصلاحيات مطلوبة لتسجيل بصمات جديدة."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
+msgid "Privileges are required to verify fingerprints."
+msgstr "الصلاحيات مطلوبة لتأكيد البصمة."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:5
+msgid "Select a user to enroll"
+msgstr "اختر مستخدما لتسجيل بصمته"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:6
+msgid "Verify a fingerprint"
+msgstr "أكّد البصمة"
+
+#: ../src/device.c:386
+#, c-format
+msgid "Device was not claimed before use"
+msgstr "لم يُحجز الجهاز قبل استخدامه"
+
+#: ../src/device.c:397
+#, c-format
+msgid "Device already in use by another user"
+msgstr "الجهاز يستخدمه مستخدم آخر الآن"
+
+#: ../pam/fingerprint-strings.h:28
+#, c-format
+msgid "Place your left thumb on %s"
+msgstr "ضع إبهامك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:28
+#, c-format
+msgid "Swipe your left thumb on %s"
+msgstr "انقر بإبهامك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:29
+#, c-format
+msgid "Place your left index finger on %s"
+msgstr "ضع سبابتك اليسرى على %s"
+
+#: ../pam/fingerprint-strings.h:29
+#, c-format
+msgid "Swipe your left index finger on %s"
+msgstr "انقر بسبابتك اليسرى على %s"
+
+#: ../pam/fingerprint-strings.h:30
+#, c-format
+msgid "Place your left middle finger on %s"
+msgstr "ضع أصبعك الوسطى اليسرى على %s"
+
+#: ../pam/fingerprint-strings.h:30
+#, c-format
+msgid "Swipe your left middle finger on %s"
+msgstr "انقر بأصبعك الوسطى اليسرى على %s"
+
+#: ../pam/fingerprint-strings.h:31
+#, c-format
+msgid "Place your left ring finger on %s"
+msgstr "ضع بنصرك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:31
+#, c-format
+msgid "Swipe your left ring finger on %s"
+msgstr "انقر ببنصرك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Place your left little finger on %s"
+msgstr "ضع خنصرك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Swipe your left little finger on %s"
+msgstr "انقر بخنصرك الأيسر على %s"
+
+#: ../pam/fingerprint-strings.h:33
+#, c-format
+msgid "Place your right thumb on %s"
+msgstr "ضع إبهامك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:33
+#, c-format
+msgid "Swipe your right thumb on %s"
+msgstr "انقر بإبهامك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Place your right index finger on %s"
+msgstr "ضع سبابتك اليمنى على %s"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Swipe your right index finger on %s"
+msgstr "انقر بسبابتك اليمنى على %s"
+
+#: ../pam/fingerprint-strings.h:35
+#, c-format
+msgid "Place your right middle finger on %s"
+msgstr "ضع أصبعك الوسطى اليمنى على %s"
+
+#: ../pam/fingerprint-strings.h:35
+#, c-format
+msgid "Swipe your right middle finger on %s"
+msgstr "انقر بأصبعك الوسطى اليمنى على %s"
+
+#: ../pam/fingerprint-strings.h:36
+#, c-format
+msgid "Place your right ring finger on %s"
+msgstr "ضع بنصرك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:36
+#, c-format
+msgid "Swipe your right ring finger on %s"
+msgstr "انقر ببنصرك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:37
+#, c-format
+msgid "Place your right little finger on %s"
+msgstr "ضع خنصرك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:37
+#, c-format
+msgid "Swipe your right little finger on %s"
+msgstr "انقر بخنصرك الأيمن على %s"
+
+#: ../pam/fingerprint-strings.h:72 ../pam/fingerprint-strings.h:98
+msgid "Place your finger on the reader again"
+msgstr "ضع أصبعك على القارئ مرة أخرى"
+
+#: ../pam/fingerprint-strings.h:74 ../pam/fingerprint-strings.h:100
+msgid "Swipe your finger again"
+msgstr "انقر بأصبعك مرة أخرى"
+
+#: ../pam/fingerprint-strings.h:77 ../pam/fingerprint-strings.h:103
+msgid "Swipe was too short, try again"
+msgstr "النقرة كانت سريعة، حاول ثانيا"
+
+#: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
+msgid "Your finger was not centered, try swiping your finger again"
+msgstr "لم يكن أصبعك موسطّا، حاول ثانيا"
+
+#: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
+msgid "Remove your finger, and try swiping your finger again"
+msgstr "ارفع أصبعك، ثم حاول ثانيا"
