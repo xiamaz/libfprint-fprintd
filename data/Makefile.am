@@ -26,6 +26,6 @@ EXTRA_DIST = $(dbus_services_in_files) $(dbus_conf_DATA) $(polkit_in_files) $(co
 CLEANFILES = $(polkit_DATA) $(dbus_services_DATA) fprintd.1
 
 check:
-	$(XMLLINT) $(polkit_DATA)
+	@$(XMLLINT) --noout $(polkit_DATA)
 
 
