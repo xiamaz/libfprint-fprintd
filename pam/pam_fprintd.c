@@ -2,21 +2,23 @@
  * pam_fprint: PAM module for fingerprint authentication through fprintd
  * Copyright (C) 2007 Daniel Drake <dsd@gentoo.org>
  * Copyright (C) 2008 Bastien Nocera <hadess@hadess.net>
- * 
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
+
+#include <config.h>
 
 #include <stdio.h>
 #include <unistd.h>
@@ -24,6 +26,7 @@
 #include <string.h>
 #include <syslog.h>
 
+#include <glib/gi18n-lib.h>
 #include <dbus/dbus-glib-bindings.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
@@ -33,6 +36,8 @@
 #include "marshal.h"
 
 #define N_(x) x
+#define TR(s) dgettext(GETTEXT_PACKAGE, s)
+
 #include "fingerprint-strings.h"
 
 #define MAX_TRIES 3
@@ -220,7 +225,7 @@ static void verify_result(GObject *object, const char *result, gboolean done, gp
 		return;
 	}
 
-	msg = verify_result_str_to_msg (result, data->is_swipe);
+	msg = TR(verify_result_str_to_msg (result, data->is_swipe));
 	send_err_msg (data->pamh, msg);
 }
 
@@ -235,7 +240,7 @@ static void verify_finger_selected(GObject *object, const char *finger_name, gpo
 		else
 			msg = g_strdup_printf ("Swipe your finger on %s", data->driver);
 	} else {
-		msg = g_strdup_printf (finger_str_to_msg(finger_name, data->is_swipe), data->driver);
+		msg = g_strdup_printf (TR(finger_str_to_msg(finger_name, data->is_swipe)), data->driver);
 	}
 	D(data->pamh, "verify_finger_selected %s", msg);
 	send_info_msg (data->pamh, msg);
@@ -401,6 +406,9 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc,
 	const char *username;
 	guint i;
 	int r;
+
+	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
 	g_type_init ();
 
