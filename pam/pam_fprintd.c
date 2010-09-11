@@ -35,7 +35,6 @@
 
 #include "marshal.h"
 
-#define N_(x) x
 #define TR(s) dgettext(GETTEXT_PACKAGE, s)
 
 #include "fingerprint-strings.h"
