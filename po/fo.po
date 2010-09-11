@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gunleif Joensen <gunleif@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-20 10:53+0000\n"
+"PO-Revision-Date: 2010-09-10 19:58+0200\n"
+"Last-Translator: Gunleif Joensen <gunleif@gmail.com>\n"
+"Language-Team: Føroyabólkurin\n"
+"Language: fo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Enroll new fingerprints"
+msgstr "Skráset nýggj fingramerki"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr ""
+"Serrættindi eru krøvd, til at skráseta nýggj fingramerki fyri arðar "
+"brúkarar."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
+msgid "Privileges are required to enroll new fingerprints."
+msgstr "Serrættindi eru krøvd til at skráseta nýggj gingramerki."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
+msgid "Privileges are required to verify fingerprints."
+msgstr "Serrættindi eru krøvd til at vátta fingramerki"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:5
+msgid "Select a user to enroll"
+msgstr "Vel ein brúkara at skráseta"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:6
+msgid "Verify a fingerprint"
+msgstr "Vátta eitt fingramerki"
+
+#: ../src/device.c:386
+#, c-format, fuzzy
+msgid "Device was not claimed before use"
+msgstr "Tóleind varð ikki kravd áðrenn nýtslu"
+
+#: ../src/device.c:397
+#, c-format
+msgid "Device already in use by another user"
+msgstr "Tóleind er longu í brúka, av einum ørðum brúkara"
+
+#: ../pam/fingerprint-strings.h:28
+#, c-format
+msgid "Place your left thumb on %s"
+msgstr "Set vinstra tummil á %s"
+
+#: ../pam/fingerprint-strings.h:28
+#, c-format
+msgid "Swipe your left thumb on %s"
+msgstr "Drag vinstra tummil eftir %s"
+
+#: ../pam/fingerprint-strings.h:29
+#, c-format
+msgid "Place your left index finger on %s"
+msgstr "Set vinstra peikifingur á %s"
+
+#: ../pam/fingerprint-strings.h:29
+#, c-format
+msgid "Swipe your left index finger on %s"
+msgstr "Drag vinstra peikifingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:30
+#, c-format
+msgid "Place your left middle finger on %s"
+msgstr "Set vinstra longutong á %s"
+
+#: ../pam/fingerprint-strings.h:30
+#, c-format
+msgid "Swipe your left middle finger on %s"
+msgstr "Drag vinstra longutong eftir %s"
+
+#: ../pam/fingerprint-strings.h:31
+#, c-format
+msgid "Place your left ring finger on %s"
+msgstr "Set vinstra ringfingur á %s"
+
+#: ../pam/fingerprint-strings.h:31
+#, c-format
+msgid "Swipe your left ring finger on %s"
+msgstr "Drag vinstra ringfingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Place your left little finger on %s"
+msgstr "Set vinstra lítlafingur á %s"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Swipe your left little finger on %s"
+msgstr "Drag vinstra lítlafingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:33
+#, c-format
+msgid "Place your right thumb on %s"
+msgstr "Set høgra tummil á %s"
+
+#: ../pam/fingerprint-strings.h:33
+#, c-format
+msgid "Swipe your right thumb on %s"
+msgstr "Drag høgra tummil eftir %s"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Place your right index finger on %s"
+msgstr "Set høgra peikifingur á %s"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Swipe your right index finger on %s"
+msgstr "Drag høgra peikifingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:35
+#, c-format
+msgid "Place your right middle finger on %s"
+msgstr "Set høgra longutong á %s"
+
+#: ../pam/fingerprint-strings.h:35
+#, c-format
+msgid "Swipe your right middle finger on %s"
+msgstr "Drag høgra longutong eftir %s"
+
+#: ../pam/fingerprint-strings.h:36
+#, c-format
+msgid "Place your right ring finger on %s"
+msgstr "Set høgra ringfingur á %s"
+
+#: ../pam/fingerprint-strings.h:36
+#, c-format
+msgid "Swipe your right ring finger on %s"
+msgstr "Drag høgra ringfingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:37
+#, c-format
+msgid "Place your right little finger on %s"
+msgstr "Set høgra lítlafingur á %s"
+
+#: ../pam/fingerprint-strings.h:37
+#, c-format
+msgid "Swipe your right little finger on %s"
+msgstr "Drag høgra lítlafingur eftir %s"
+
+#: ../pam/fingerprint-strings.h:72 ../pam/fingerprint-strings.h:98
+msgid "Place your finger on the reader again"
+msgstr "Set fingurin á lesaran umaftur"
+
+#: ../pam/fingerprint-strings.h:74 ../pam/fingerprint-strings.h:100
+msgid "Swipe your finger again"
+msgstr "Drag fingurin enn eina ferð"
+
+#: ../pam/fingerprint-strings.h:77 ../pam/fingerprint-strings.h:103
+msgid "Swipe was too short, try again"
+msgstr "Dragið var ov stutt, royn aftur"
+
+#: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
+msgid "Your finger was not centered, try swiping your finger again"
+msgstr "Fingurin var ikki á miðjuni, royn at draga fingurin ein ferð afturat"
+
+#: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
+msgid "Remove your finger, and try swiping your finger again"
+msgstr "Flyt fingurin, og royn aftur at draga hann"
