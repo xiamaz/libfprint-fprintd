@@ -5,7 +5,7 @@ pammoddir=$(libdir)/security
 
 pam_fprintd_la_SOURCES = pam_fprintd.c $(MARSHALFILES)
 pam_fprintd_la_CFLAGS = -fPIC $(WARN_CFLAGS) $(GLIB_CFLAGS) -DLOCALEDIR="\"$(localedir)\""
-pam_fprintd_la_LDFLAGS = -avoid-version -module
+pam_fprintd_la_LDFLAGS = -avoid-version -module -Wl,-z,nodelete
 pam_fprintd_la_LIBADD = $(PAM_LIBS) $(GLIB_LIBS)
 
 MARSHALFILES = marshal.c marshal.h
