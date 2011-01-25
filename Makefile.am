@@ -7,7 +7,9 @@ check: check-translations
 check-translations:
 	@for i in $(top_srcdir)/po/*.po ; do								\
 		if ! grep -q `basename $$i | sed 's,.po,,'` $(top_srcdir)/po/LINGUAS ; then		\
+			echo '**********************************';					\
 			echo '***' `basename $$i | sed 's,.po,,'` missing from po/LINGUAS '***' ;	\
+			echo '**********************************';					\
 			exit 1;										\
 		fi;											\
 	done;
