@@ -376,7 +376,6 @@ _fprint_device_check_claimed (FprintDevice *rdev,
 			      GError **error)
 {
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(rdev);
-	DBusConnection *conn;
 	char *sender;
 	gboolean retval;
 
@@ -387,7 +386,6 @@ _fprint_device_check_claimed (FprintDevice *rdev,
 		return FALSE;
 	}
 
-	conn = dbus_g_connection_get_connection (fprintd_dbus_conn);
 	sender = dbus_g_method_get_sender (context);
 	retval = g_str_equal (sender, priv->sender);
 	g_free (sender);
