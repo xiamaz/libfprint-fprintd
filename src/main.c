@@ -369,6 +369,8 @@ int main(int argc, char **argv)
 	g_main_loop_run(loop);
 	g_message("main loop completed");
 
+	g_object_unref (manager);
+
 err:
 	fp_exit();
 	return 0;
