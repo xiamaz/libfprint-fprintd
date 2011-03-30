@@ -1,20 +1,21 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# Yuri Chornoivan <yurchor@ukr.net>, 2010.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-20 10:53+0000\n"
-"PO-Revision-Date: 2010-09-06 19:21+0300\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <translation@linux.org.ua>\n"
+"Project-Id-Version: fprintd\n"
+"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
+"POT-Creation-Date: 2010-11-26 20:04+0000\n"
+"PO-Revision-Date: 2011-03-30 15:29+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
 msgid "Enroll new fingerprints"
@@ -23,8 +24,8 @@ msgstr "Реєстрація нових відбитків пальців"
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
 msgstr ""
-"Для реєстрації нових відбитків для інших користувачів потрібні "
-"відповідні права доступу."
+"Для реєстрації нових відбитків для інших користувачів потрібні відповідні "
+"права доступу."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
@@ -167,10 +168,8 @@ msgstr "Натискання було занадто коротким, повт�
 #: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
 msgid "Your finger was not centered, try swiping your finger again"
 msgstr ""
-"Ваш палець було розташовано не у центрі, спробуйте натиснути пальцем ще "
-"раз"
+"Ваш палець було розташовано не у центрі, спробуйте натиснути пальцем ще раз"
 
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Приберіть ваш палець і повторіть спробу натискання"
-

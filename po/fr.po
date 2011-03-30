@@ -8,166 +8,172 @@ msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
 "POT-Creation-Date: 2010-11-26 20:04+0000\n"
-"PO-Revision-Date: 2011-03-30 15:29+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Hungarian <openscope@googlegroups.com>\n"
+"PO-Revision-Date: 2011-03-22 15:29+0000\n"
+"Last-Translator: claudep <claude@2xlibre.net>\n"
+"Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
 msgid "Enroll new fingerprints"
-msgstr "Új újjlenyomatok felvétele"
+msgstr "Introduire de nouvelles empreintes"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
 msgstr ""
-"Jogosultság szükséges új ujjlenyomatok felvételéhez más felhasználóknak."
+"Des permissions sont nécessaires pour introduire de nouvelles empreintes "
+"digitales pour d'autres utilisateurs."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
-msgstr "Jogosultság szükséges új ujjlenyomatok felvételéhez."
+msgstr ""
+"Des permissions sont nécessaires pour introduire de nouvelles empreintes "
+"digitales."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to verify fingerprints."
-msgstr "Jogosultság szükséges az ujjlenyomatok ellenőrzéséhez."
+msgstr ""
+"Des permissions sont nécessaires pour contrôler des empreintes digitales."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
-msgstr "Válassza ki a felveendő felhasználót"
+msgstr "Choisir un utilisateur pour l'introduction"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
 msgid "Verify a fingerprint"
-msgstr "Ujjlenyomat ellenőrzése"
+msgstr "Vérifier une empreinte digitale"
 
 #: ../src/device.c:386
 #, c-format
 msgid "Device was not claimed before use"
-msgstr "Az eszközt használat előtt nem foglalták le"
+msgstr "Le périphérique n'a pas été réservé avant utilisation"
 
 #: ../src/device.c:397
 #, c-format
 msgid "Device already in use by another user"
-msgstr "Az eszközt már másik felhasználó használja"
+msgstr "Le périphérique est déjà utilisé par un autre utilisateur"
 
 #: ../pam/fingerprint-strings.h:28
 #, c-format
 msgid "Place your left thumb on %s"
-msgstr "Helyezze a bal hüvelykujját ide: %s"
+msgstr "Placez votre pouce gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:28
 #, c-format
 msgid "Swipe your left thumb on %s"
-msgstr "Húzza le a bal hüvelykujját ezen: %s"
+msgstr "Glissez votre pouce gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:29
 #, c-format
 msgid "Place your left index finger on %s"
-msgstr "Helyezze a bal mutatóujját ide: %s"
+msgstr "Placez votre index gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:29
 #, c-format
 msgid "Swipe your left index finger on %s"
-msgstr "Húzza le a bal mutatóujját ezen: %s"
+msgstr "Glissez votre index gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:30
 #, c-format
 msgid "Place your left middle finger on %s"
-msgstr "Helyezze a bal középső ujját ide: %s"
+msgstr "Placez votre majeur gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:30
 #, c-format
 msgid "Swipe your left middle finger on %s"
-msgstr "Húzza le a bal középső ujját ezen: %s"
+msgstr "Glissez votre majeur gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:31
 #, c-format
 msgid "Place your left ring finger on %s"
-msgstr "Helyezze a bal gyűrűsujját ide: %s"
+msgstr "Placez votre annulaire gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:31
 #, c-format
 msgid "Swipe your left ring finger on %s"
-msgstr "Húzza le a bal gyűrűsujját ezen: %s"
+msgstr "Glissez votre annulaire gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your left little finger on %s"
-msgstr "Helyezze a bal kisujját ide: %s"
+msgstr "Placez votre auriculaire gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Swipe your left little finger on %s"
-msgstr "Húzza le a bal kisujját ezen: %s"
+msgstr "Glissez votre auriculaire gauche sur %s"
 
 #: ../pam/fingerprint-strings.h:33
 #, c-format
 msgid "Place your right thumb on %s"
-msgstr "Helyezze a jobb hüvelykujját ide: %s"
+msgstr "Placez votre pouce droit sur %s"
 
 #: ../pam/fingerprint-strings.h:33
 #, c-format
 msgid "Swipe your right thumb on %s"
-msgstr "Húzza le a jobb hüvelykujját ezen: %s"
+msgstr "Glissez votre pouce droit sur %s"
 
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Place your right index finger on %s"
-msgstr "Helyezze a jobb mutatóujját ide: %s"
+msgstr "Placez votre index droit sur %s"
 
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Swipe your right index finger on %s"
-msgstr "Húzza le a jobb mutatóujját ezen: %s"
+msgstr "Glissez votre index droit sur %s"
 
 #: ../pam/fingerprint-strings.h:35
 #, c-format
 msgid "Place your right middle finger on %s"
-msgstr "Helyezze a jobb középső ujját ide: %s"
+msgstr "Placez votre majeur droit sur %s"
 
 #: ../pam/fingerprint-strings.h:35
 #, c-format
 msgid "Swipe your right middle finger on %s"
-msgstr "Húzza le a jobb középső ujját ezen: %s"
+msgstr "Glissez votre majeur droit sur %s"
 
 #: ../pam/fingerprint-strings.h:36
 #, c-format
 msgid "Place your right ring finger on %s"
-msgstr "Helyezze a jobb gyűrűsujját ide: %s"
+msgstr "Placez votre annulaire droit sur %s"
 
 #: ../pam/fingerprint-strings.h:36
 #, c-format
 msgid "Swipe your right ring finger on %s"
-msgstr "Húzza le a jobb gyűrűsujját ezen: %s"
+msgstr "Glissez votre annulaire droit sur %s"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
 msgid "Place your right little finger on %s"
-msgstr "Helyezze a jobb kisujját ide: %s"
+msgstr "Placez votre auriculaire droit sur %s"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
 msgid "Swipe your right little finger on %s"
-msgstr "Húzza le a jobb kisujját ezen: %s"
+msgstr "Glissez votre auriculaire droit sur %s"
 
 #: ../pam/fingerprint-strings.h:72 ../pam/fingerprint-strings.h:98
 msgid "Place your finger on the reader again"
-msgstr "Helyezze ismét az olvasóra az ujját"
+msgstr "Placez à nouveau votre doigt sur le lecteur"
 
 #: ../pam/fingerprint-strings.h:74 ../pam/fingerprint-strings.h:100
 msgid "Swipe your finger again"
-msgstr "Húzza le ismét az ujját"
+msgstr "Glissez à nouveau votre doigt"
 
 #: ../pam/fingerprint-strings.h:77 ../pam/fingerprint-strings.h:103
 msgid "Swipe was too short, try again"
-msgstr "A lehúzás túl gyors volt, próbálja újra"
+msgstr "Le glissement était trop bref, essayez une nouvelle fois"
 
 #: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr "Az ujja nem volt középen, próbálj ismét lehúzni"
+msgstr ""
+"Votre doigt n'était pas centré, essayez de le glisser une nouvelle fois"
 
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
-msgstr "Vegye el az ujját és próbálja újra lehúzni"
+msgstr ""
+"Enlevez votre doigt du lecteur et essayez de le glisser une nouvelle fois"
