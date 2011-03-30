@@ -2,7 +2,12 @@ AUTOMAKE_OPTIONS = dist-bzip2
 SUBDIRS = src data tests pam doc po
 EXTRA_DIST = TODO intltool-extract.in intltool-merge.in intltool-update.in
 
+all: check create-pot
+
 check: check-translations
+
+create-pot:
+	$(MAKE) -C po fprintd.pot
 
 check-translations:
 	@for i in $(top_srcdir)/po/*.po ; do								\
@@ -13,3 +18,7 @@ check-translations:
 			exit 1;										\
 		fi;											\
 	done;
+
+update-translations: create-pot check-translations
+	@tx pull --all --force --skip
+	@tx push --source
