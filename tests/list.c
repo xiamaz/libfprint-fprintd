@@ -130,10 +130,7 @@ static void process_devices(char **argv)
 
 int main(int argc, char **argv)
 {
-	GMainLoop *loop;
-
 	g_type_init();
-	loop = g_main_loop_new(NULL, FALSE);
 	create_manager();
 
 	if (argc < 2) {

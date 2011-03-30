@@ -118,7 +118,6 @@ static void release_device(DBusGProxy *dev)
 
 int main(int argc, char **argv)
 {
-	GMainLoop *loop;
 	DBusGProxy *dev;
 	char *username;
 
@@ -127,7 +126,6 @@ int main(int argc, char **argv)
 	dbus_g_object_register_marshaller (fprintd_marshal_VOID__STRING_BOOLEAN,
 					   G_TYPE_NONE, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_INVALID);
 
-	loop = g_main_loop_new(NULL, FALSE);
 	create_manager();
 
 	username = NULL;

@@ -166,7 +166,6 @@ static const GOptionEntry entries[] = {
 int main(int argc, char **argv)
 {
 	GOptionContext *context;
-	GMainLoop *loop;
 	GError *err = NULL;
 	DBusGProxy *dev;
 	char *username;
@@ -199,7 +198,6 @@ int main(int argc, char **argv)
 		g_log_set_always_fatal (fatal_mask);
 	}
 
-	loop = g_main_loop_new(NULL, FALSE);
 	create_manager();
 
 	dev = open_device(username);
