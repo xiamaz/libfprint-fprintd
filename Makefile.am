@@ -22,3 +22,5 @@ check-translations:
 update-translations: create-pot check-translations
 	@tx pull --all --force --skip
 	@tx push --source
+
+-include $(top_srcdir)/git.mk
