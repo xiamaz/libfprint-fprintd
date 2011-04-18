@@ -11,7 +11,6 @@ AM_CFLAGS = $(WARN_CFLAGS) $(FPRINT_CFLAGS) $(DAEMON_CFLAGS) -DLOCALEDIR=\""$(da
 
 libfprintd_la_SOURCES =				\
 	manager.c device.c			\
-	egg-dbus-monitor.c egg-dbus-monitor.h	\
 	$(MARSHALFILES)				\
 	fprintd.h
 libfprintd_la_LIBADD = $(FPRINT_LIBS) $(DAEMON_LIBS)

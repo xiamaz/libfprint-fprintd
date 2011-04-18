@@ -22,6 +22,7 @@
 #include <dbus/dbus-glib-bindings.h>
 #include <dbus/dbus-glib-lowlevel.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <polkit/polkit.h>
 #include <libfprint/fprint.h>
 
@@ -32,7 +33,6 @@
 #include "fprintd-marshal.h"
 #include "fprintd.h"
 #include "storage.h"
-#include "egg-dbus-monitor.h"
 
 static char *fingers[] = {
 	"left-thumb",
@@ -272,7 +272,7 @@ static void fprint_device_init(FprintDevice *device)
 	priv->clients = g_hash_table_new_full (g_str_hash,
 					       g_str_equal,
 					       g_free,
-					       g_object_unref);
+					       NULL);
 }
 
 G_DEFINE_TYPE(FprintDevice, fprint_device, G_TYPE_OBJECT);
@@ -524,51 +524,48 @@ static void action_stop_cb(struct fp_dev *dev, void *user_data)
 }
 
 static void
-_fprint_device_client_disconnected (EggDbusMonitor *monitor, gboolean connected, FprintDevice *rdev)
+_fprint_device_client_vanished (GDBusConnection *connection,
+				const char *name,
+				FprintDevice *rdev)
 {
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(rdev);
 
-	if (connected == FALSE) {
-		const char *sender;
-		sender = egg_dbus_monitor_get_service (monitor);
-
-		/* Was that the client that claimed the device? */
-		if (priv->sender != NULL) {
-			gboolean done = FALSE;
-			switch (priv->current_action) {
-			case ACTION_NONE:
-				break;
-			case ACTION_IDENTIFY:
-				fp_async_identify_stop(priv->dev, action_stop_cb, &done);
-				while (done == FALSE)
-					g_main_context_iteration (NULL, TRUE);
-				break;
-			case ACTION_VERIFY:
-				fp_async_verify_stop(priv->dev, action_stop_cb, &done);
-				while (done == FALSE)
-					g_main_context_iteration (NULL, TRUE);
-				break;
-			case ACTION_ENROLL:
-				fp_async_enroll_stop(priv->dev, action_stop_cb, &done);
-				while (done == FALSE)
-					g_main_context_iteration (NULL, TRUE);
-				break;
-			}
-			priv->current_action = ACTION_NONE;
-			done = FALSE;
-
-			/* Close the claimed device as well */
-			fp_async_dev_close (priv->dev, action_stop_cb, &done);
+	/* Was that the client that claimed the device? */
+	if (g_strcmp0 (priv->sender, name) == 0) {
+		gboolean done = FALSE;
+		switch (priv->current_action) {
+		case ACTION_NONE:
+			break;
+		case ACTION_IDENTIFY:
+			fp_async_identify_stop(priv->dev, action_stop_cb, &done);
 			while (done == FALSE)
 				g_main_context_iteration (NULL, TRUE);
-
-			g_free (priv->sender);
-			priv->sender = NULL;
-			g_free (priv->username);
-			priv->username = NULL;
+			break;
+		case ACTION_VERIFY:
+			fp_async_verify_stop(priv->dev, action_stop_cb, &done);
+			while (done == FALSE)
+				g_main_context_iteration (NULL, TRUE);
+			break;
+		case ACTION_ENROLL:
+			fp_async_enroll_stop(priv->dev, action_stop_cb, &done);
+			while (done == FALSE)
+				g_main_context_iteration (NULL, TRUE);
+			break;
 		}
-		g_hash_table_remove (priv->clients, sender);
+		priv->current_action = ACTION_NONE;
+		done = FALSE;
+
+		/* Close the claimed device as well */
+		fp_async_dev_close (priv->dev, action_stop_cb, &done);
+		while (done == FALSE)
+			g_main_context_iteration (NULL, TRUE);
+
+		g_free (priv->sender);
+		priv->sender = NULL;
+		g_free (priv->username);
+		priv->username = NULL;
 	}
+	g_hash_table_remove (priv->clients, name);
 
 	if (g_hash_table_size (priv->clients) == 0) {
 		g_object_notify (G_OBJECT (rdev), "in-use");
@@ -578,17 +575,19 @@ _fprint_device_client_disconnected (EggDbusMonitor *monitor, gboolean connected,
 static void
 _fprint_device_add_client (FprintDevice *rdev, const char *sender)
 {
-	EggDbusMonitor *monitor;
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(rdev);
+	guint id;
 
-	monitor = g_hash_table_lookup (priv->clients, sender);
-	if (monitor == NULL) {
-		monitor = egg_dbus_monitor_new ();
-		egg_dbus_monitor_assign (monitor, fprintd_dbus_conn, sender);
-		//FIXME handle replaced
-		g_signal_connect (G_OBJECT (monitor), "connection-changed",
-					 G_CALLBACK (_fprint_device_client_disconnected), rdev);
-		g_hash_table_insert (priv->clients, g_strdup (sender), monitor);
+	id = GPOINTER_TO_UINT (g_hash_table_lookup (priv->clients, sender));
+	if (id == 0) {
+		id = g_bus_watch_name (G_BUS_TYPE_SYSTEM,
+				       sender,
+				       G_BUS_NAME_WATCHER_FLAGS_NONE,
+				       NULL,
+				       (GBusNameVanishedCallback) _fprint_device_client_vanished,
+				       rdev,
+				       NULL);
+		g_hash_table_insert (priv->clients, g_strdup (sender), GUINT_TO_POINTER(id));
 		g_object_notify (G_OBJECT (rdev), "in-use");
 	}
 }
