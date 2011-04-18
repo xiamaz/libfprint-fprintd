@@ -1,6 +1,10 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.4.1:
+- Enable gtk-doc by default so that file aren't
+  missing in the tarball
+
 version 0.4.0:
 - Loads of new translations
 - Fix crasher when PAM module gets unloaded

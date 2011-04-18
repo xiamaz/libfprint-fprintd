@@ -59,6 +59,10 @@ HTML_IMAGES = 				\
 # Extra options to supply to gtkdoc-fixref
 FIXXREF_OPTIONS=
 
+DISTCLEANFILES =				\
+	net.reactivated.Fprint.Manager.ref.xml	\
+	net.reactivated.Fprint.Device.ref.xml
+
 MAINTAINERCLEANFILES =		\
 	*~			\
 	Makefile.in		\
