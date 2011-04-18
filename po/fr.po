@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2010-11-26 20:04+0000\n"
+"POT-Creation-Date: 2011-03-30 16:29+0100\n"
 "PO-Revision-Date: 2011-03-22 15:29+0000\n"
 "Last-Translator: claudep <claude@2xlibre.net>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -46,12 +46,12 @@ msgstr "Choisir un utilisateur pour l'introduction"
 msgid "Verify a fingerprint"
 msgstr "Vérifier une empreinte digitale"
 
-#: ../src/device.c:386
+#: ../src/device.c:385
 #, c-format
 msgid "Device was not claimed before use"
 msgstr "Le périphérique n'a pas été réservé avant utilisation"
 
-#: ../src/device.c:397
+#: ../src/device.c:395
 #, c-format
 msgid "Device already in use by another user"
 msgstr "Le périphérique est déjà utilisé par un autre utilisateur"
