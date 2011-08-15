@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Alexander Shopov <ash@kambanaria.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2011-03-30 16:29+0100\n"
+"POT-Creation-Date: 2011-04-18 17:52+0100\n"
 "PO-Revision-Date: 2011-03-22 15:29+0000\n"
 "Last-Translator: al_shopov <ash@kambanaria.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,3 +173,5 @@ msgstr "Пръстът ви не бе центриран, прекарайте �
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Махнете пръста си и го прекарайте отново"
+
+

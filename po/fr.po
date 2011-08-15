@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# claudep <claude@2xlibre.net>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2011-03-30 16:29+0100\n"
+"POT-Creation-Date: 2011-04-18 17:52+0100\n"
 "PO-Revision-Date: 2011-03-22 15:29+0000\n"
 "Last-Translator: claudep <claude@2xlibre.net>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -177,3 +177,5 @@ msgstr ""
 msgid "Remove your finger, and try swiping your finger again"
 msgstr ""
 "Enlevez votre doigt du lecteur et essayez de le glisser une nouvelle fois"
+
+
