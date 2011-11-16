@@ -164,6 +164,29 @@ static void close_and_unref (DBusGConnection *connection)
 	dbus_g_connection_unref (connection);
 }
 
+#define DBUS_TYPE_G_OBJECT_PATH_ARRAY (dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_OBJECT_PATH))
+
+static gboolean has_multiple_devices(pam_handle_t *pamh, DBusGProxy *manager)
+{
+	GError *error = NULL;
+	GPtrArray *paths;
+	gboolean has_multiple;
+
+	if (!dbus_g_proxy_call (manager, "GetDevices", &error,
+				G_TYPE_INVALID, DBUS_TYPE_G_OBJECT_PATH_ARRAY,
+				&paths, G_TYPE_INVALID)) {
+		D(pamh, "get_devices failed: %s", error->message);
+		g_error_free (error);
+		return FALSE;
+	}
+
+	has_multiple = (paths->len > 1);
+	g_strfreev ((char **)paths->pdata);
+	g_ptr_array_free (paths, TRUE);
+
+	return has_multiple;
+}
+
 static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, const char *username)
 {
 	GError *error = NULL;
@@ -233,14 +256,8 @@ static void verify_finger_selected(GObject *object, const char *finger_name, gpo
 	verify_data *data = user_data;
 	char *msg;
 
-	if (g_str_equal (finger_name, "any")) {
-		if (data->is_swipe == FALSE)
-			msg = g_strdup_printf ("Place your finger on %s", data->driver);
-		else
-			msg = g_strdup_printf ("Swipe your finger on %s", data->driver);
-	} else {
-		msg = g_strdup_printf (TR(finger_str_to_msg(finger_name, data->is_swipe)), data->driver);
-	}
+	msg = finger_str_to_msg(finger_name, data->driver, data->is_swipe);
+
 	D(data->pamh, "verify_finger_selected %s", msg);
 	send_info_msg (data->pamh, msg);
 	g_free (msg);
@@ -257,7 +274,7 @@ static gboolean verify_timeout_cb (gpointer user_data)
 	return FALSE;
 }
 
-static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev)
+static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev, gboolean has_multiple_devices)
 {
 	GError *error = NULL;
 	GHashTable *props;
@@ -276,7 +293,8 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev)
 	if (dbus_g_proxy_call (p, "GetAll", NULL, G_TYPE_STRING, "net.reactivated.Fprint.Device", G_TYPE_INVALID,
 			       dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE), &props, G_TYPE_INVALID)) {
 		const char *scan_type;
-		data->driver = g_value_dup_string (g_hash_table_lookup (props, "name"));
+		if (has_multiple_devices)
+			data->driver = g_value_dup_string (g_hash_table_lookup (props, "name"));
 		scan_type = g_value_dup_string (g_hash_table_lookup (props, "scan-type"));
 		if (g_str_equal (scan_type, "swipe"))
 			data->is_swipe = TRUE;
@@ -284,9 +302,6 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev)
 	}
 
 	g_object_unref (p);
-
-	if (!data->driver)
-		data->driver = g_strdup ("Fingerprint reader");
 
 	dbus_g_proxy_add_signal(dev, "VerifyStatus", G_TYPE_STRING, G_TYPE_BOOLEAN, NULL);
 	dbus_g_proxy_add_signal(dev, "VerifyFingerSelected", G_TYPE_STRING, NULL);
@@ -388,7 +403,7 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 		close_and_unref (connection);
 		return PAM_AUTHINFO_UNAVAIL;
 	}
-	ret = do_verify(loop, pamh, dev);
+	ret = do_verify(loop, pamh, dev, has_multiple_devices(pamh, manager));
 
 	g_main_loop_unref (loop);
 	release_device(pamh, dev);
