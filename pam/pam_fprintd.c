@@ -166,45 +166,30 @@ static void close_and_unref (DBusGConnection *connection)
 
 #define DBUS_TYPE_G_OBJECT_PATH_ARRAY (dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_OBJECT_PATH))
 
-static gboolean has_multiple_devices(pam_handle_t *pamh, DBusGProxy *manager)
+static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, const char *username, gboolean *has_multiple_devices)
 {
 	GError *error = NULL;
-	GPtrArray *paths;
-	gboolean has_multiple;
+	const char *path;
+	DBusGProxy *dev;
+	GPtrArray *paths_array;
+	const char **paths;
 
 	if (!dbus_g_proxy_call (manager, "GetDevices", &error,
 				G_TYPE_INVALID, DBUS_TYPE_G_OBJECT_PATH_ARRAY,
-				&paths, G_TYPE_INVALID)) {
+				&paths_array, G_TYPE_INVALID)) {
 		D(pamh, "get_devices failed: %s", error->message);
-		g_error_free (error);
-		return FALSE;
-	}
-
-	has_multiple = (paths->len > 1);
-	g_strfreev ((char **)paths->pdata);
-	g_ptr_array_free (paths, TRUE);
-
-	return has_multiple;
-}
-
-static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, const char *username)
-{
-	GError *error = NULL;
-	gchar *path;
-	DBusGProxy *dev;
-
-	if (!dbus_g_proxy_call (manager, "GetDefaultDevice", &error,
-				G_TYPE_INVALID, DBUS_TYPE_G_OBJECT_PATH,
-				&path, G_TYPE_INVALID)) {
-		D(pamh, "get_default_devices failed: %s", error->message);
 		g_error_free (error);
 		return NULL;
 	}
-	
-	if (path == NULL) {
+
+	if (paths_array == NULL) {
 		D(pamh, "No devices found\n");
 		return NULL;
 	}
+
+	*has_multiple_devices = (paths_array->len > 1);
+	paths = (const char **)paths_array->pdata;
+	path = paths[0];
 
 	D(pamh, "Using device %s\n", path);
 
@@ -212,15 +197,17 @@ static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, 
 					"net.reactivated.Fprint",
 					path,
 					"net.reactivated.Fprint.Device");
-	
-	g_free (path);
 
 	if (!dbus_g_proxy_call (dev, "Claim", &error, G_TYPE_STRING, username, G_TYPE_INVALID, G_TYPE_INVALID)) {
-		D(pamh, "failed to claim device: %s\n", error->message);
+		D(pamh, "failed to claim device '%s': %s\n", path, error->message);
 		g_error_free (error);
 		g_object_unref (dev);
-		return NULL;
+		dev = NULL;
 	}
+
+	g_strfreev ((char **)paths_array->pdata);
+	g_ptr_array_free (paths_array, TRUE);
+
 	return dev;
 }
 
@@ -390,20 +377,21 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 	DBusGConnection *connection;
 	DBusGProxy *dev;
 	GMainLoop *loop;
+	gboolean has_multiple_devices;
 	int ret;
 
 	manager = create_manager (pamh, &connection, &loop);
 	if (manager == NULL)
 		return PAM_AUTHINFO_UNAVAIL;
 
-	dev = open_device(pamh, connection, manager, username);
+	dev = open_device(pamh, connection, manager, username, &has_multiple_devices);
 	g_object_unref (manager);
 	if (!dev) {
 		g_main_loop_unref (loop);
 		close_and_unref (connection);
 		return PAM_AUTHINFO_UNAVAIL;
 	}
-	ret = do_verify(loop, pamh, dev, has_multiple_devices(pamh, manager));
+	ret = do_verify(loop, pamh, dev, has_multiple_devices);
 
 	g_main_loop_unref (loop);
 	release_device(pamh, dev);
