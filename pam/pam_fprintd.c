@@ -205,7 +205,6 @@ static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, 
 		dev = NULL;
 	}
 
-	g_strfreev ((char **)paths_array->pdata);
 	g_ptr_array_free (paths_array, TRUE);
 
 	return dev;
