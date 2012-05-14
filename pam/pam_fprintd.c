@@ -21,6 +21,7 @@
 #include <config.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <string.h>
@@ -39,8 +40,11 @@
 
 #include "fingerprint-strings.h"
 
-#define MAX_TRIES 3
-#define TIMEOUT 30
+#define DEFAULT_MAX_TRIES 3
+#define DEFAULT_TIMEOUT 30
+
+#define MAX_TRIES_MATCH "max-tries="
+#define TIMEOUT_MATCH "timeout="
 
 #define D(pamh, ...) {					\
 	if (debug) {					\
@@ -53,6 +57,8 @@
 
 
 static gboolean debug = FALSE;
+static guint max_tries = DEFAULT_MAX_TRIES;
+static guint timeout = DEFAULT_TIMEOUT;
 
 static gboolean send_info_msg(pam_handle_t *pamh, const char *msg)
 {
@@ -271,7 +277,7 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev, gbool
 	int ret;
 
 	data = g_new0 (verify_data, 1);
-	data->max_tries = MAX_TRIES;
+	data->max_tries = max_tries;
 	data->pamh = pamh;
 	data->loop = loop;
 
@@ -304,7 +310,7 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev, gbool
 		GSource *source;
 
 		/* Set up the timeout on our non-default context */
-		source = g_timeout_source_new_seconds (TIMEOUT);
+		source = g_timeout_source_new_seconds (timeout);
 		g_source_attach (source, g_main_loop_get_context (loop));
 		g_source_set_callback (source, verify_timeout_cb, data, NULL);
 
@@ -429,9 +435,23 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc,
 		return PAM_AUTHINFO_UNAVAIL;
 
 	for (i = 0; i < argc; i++) {
-		if (argv[i] != NULL && g_str_equal (argv[i], "debug")) {
-			g_message ("debug on");
-			debug = TRUE;
+		if (argv[i] != NULL) {
+			if(g_str_equal (argv[i], "debug")) {
+				g_message ("debug on");
+				debug = TRUE;
+			}
+			else if (strncmp(argv[i], MAX_TRIES_MATCH, strlen (MAX_TRIES_MATCH)) == 0 && strlen(argv[i]) == strlen (MAX_TRIES_MATCH) + 1) {
+				max_tries = atoi (argv[i] + strlen (MAX_TRIES_MATCH));
+				if (max_tries < 1)
+					max_tries = DEFAULT_MAX_TRIES;
+				D(pamh, "max_tries specified as: %d", max_tries);
+			}
+			else if (strncmp(argv[i], TIMEOUT_MATCH, strlen (TIMEOUT_MATCH)) == 0 && strlen(argv[i]) <= strlen (TIMEOUT_MATCH) + 2) {
+				timeout = atoi (argv[i] + strlen (TIMEOUT_MATCH));
+				if (timeout < 10)
+					timeout = DEFAULT_TIMEOUT;
+				D(pamh, "timeout specified as: %d", timeout);
+			}
 		}
 	}
 
