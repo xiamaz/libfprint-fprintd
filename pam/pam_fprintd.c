@@ -182,7 +182,9 @@ static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, 
 		return NULL;
 	}
 
-	if (paths_array == NULL) {
+	if (paths_array == NULL || paths_array->len == 0) {
+		if (paths_array != NULL)
+			g_ptr_array_free (paths_array, TRUE);
 		D(pamh, "No devices found\n");
 		return NULL;
 	}
