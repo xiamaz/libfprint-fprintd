@@ -2,14 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
 "POT-Creation-Date: 2011-04-18 17:52+0100\n"
-"PO-Revision-Date: 2011-08-15 21:09+0000\n"
+"PO-Revision-Date: 2010-11-30 07:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German (http://www.transifex.net/projects/p/freedesktop/team/de/)\n"
+"Language-Team: German (http://www.transifex.net/projects/p/freedesktop/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,19 +23,15 @@ msgstr "Neue Fingerabdrücke eintragen"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr ""
-"Systemverwalterrechte sind zum Eintragen neuer Fingerabdrücke für andere "
-"Benutzer erforderlich."
+msgstr "Systemverwalterrechte sind zum Eintragen neuer Fingerabdrücke für andere Benutzer erforderlich."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
-msgstr ""
-"Systemverwalterrechte sind zum Eintragen neuer Fingerabdrücke erforderlich."
+msgstr "Systemverwalterrechte sind zum Eintragen neuer Fingerabdrücke erforderlich."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to verify fingerprints."
-msgstr ""
-"Systemverwalterrechte sind zum Überprüfen neuer Fingerabdrücke erforderlich."
+msgstr "Systemverwalterrechte sind zum Überprüfen neuer Fingerabdrücke erforderlich."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
@@ -168,14 +165,8 @@ msgstr "Das Abstreifen war zu kurz, versuchen Sie es erneut"
 
 #: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr ""
-"Ihr Finger war nicht zentriert, versuchen Sie erneut Ihren Finger "
-"abzustreifen"
+msgstr "Ihr Finger war nicht zentriert, versuchen Sie erneut Ihren Finger abzustreifen"
 
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
-msgstr ""
-"Entfernen Sie Ihren Finger und versuchen Sie erneut Ihren Finger "
-"abzustreifen"
-
-
+msgstr "Entfernen Sie Ihren Finger und versuchen Sie erneut Ihren Finger abzustreifen"

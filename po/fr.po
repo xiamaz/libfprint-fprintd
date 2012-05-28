@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 # claudep <claude@2xlibre.net>, 2011.
 msgid ""
 msgstr ""
@@ -23,20 +24,15 @@ msgstr "Introduire de nouvelles empreintes"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr ""
-"Des permissions sont nécessaires pour introduire de nouvelles empreintes "
-"digitales pour d'autres utilisateurs."
+msgstr "Des permissions sont nécessaires pour introduire de nouvelles empreintes digitales pour d'autres utilisateurs."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
-msgstr ""
-"Des permissions sont nécessaires pour introduire de nouvelles empreintes "
-"digitales."
+msgstr "Des permissions sont nécessaires pour introduire de nouvelles empreintes digitales."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to verify fingerprints."
-msgstr ""
-"Des permissions sont nécessaires pour contrôler des empreintes digitales."
+msgstr "Des permissions sont nécessaires pour contrôler des empreintes digitales."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
@@ -170,12 +166,8 @@ msgstr "Le glissement était trop bref, essayez une nouvelle fois"
 
 #: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr ""
-"Votre doigt n'était pas centré, essayez de le glisser une nouvelle fois"
+msgstr "Votre doigt n'était pas centré, essayez de le glisser une nouvelle fois"
 
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
-msgstr ""
-"Enlevez votre doigt du lecteur et essayez de le glisser une nouvelle fois"
-
-
+msgstr "Enlevez votre doigt du lecteur et essayez de le glisser une nouvelle fois"

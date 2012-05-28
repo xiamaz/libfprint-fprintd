@@ -2,12 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
 "POT-Creation-Date: 2011-04-18 17:52+0100\n"
-"PO-Revision-Date: 2011-08-15 21:10+0000\n"
+"PO-Revision-Date: 2010-11-30 07:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +23,7 @@ msgstr "Vpišite nove prstne odtise"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr ""
-"Za vpis novih prstnih odtisov drugih uporabnikov so zahtevana skrbniška "
-"dovoljenja."
+msgstr "Za vpis novih prstnih odtisov drugih uporabnikov so zahtevana skrbniška dovoljenja."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
@@ -166,12 +165,8 @@ msgstr "Prst ste povlekli prehitro. Poskusite znova."
 
 #: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr ""
-"Prsta niste postavili na sredino, poskusite znova povleči prst preko "
-"bralnika."
+msgstr "Prsta niste postavili na sredino, poskusite znova povleči prst preko bralnika."
 
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Dvignite prst in poskusite znova povleči prst preko bralnika."
-
-

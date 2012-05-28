@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 # Yuri Kozlov <yuray@komyakino.ru>, 2011.
 msgid ""
 msgstr ""
@@ -9,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
 "POT-Creation-Date: 2011-04-18 17:52+0100\n"
 "PO-Revision-Date: 2011-05-01 08:33+0000\n"
-"Last-Translator: yuray <yuray@komyakino.ru>\n"
-"Language-Team: Russian (http://www.transifex.net/projects/p/freedesktop/team/ru/)\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian (http://www.transifex.net/projects/p/freedesktop/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,8 +24,7 @@ msgstr "Ввод новых отпечатков пальцев"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr ""
-"Для ввода отпечатков пальцев других пользователей требуются права доступа."
+msgstr "Для ввода отпечатков пальцев других пользователей требуются права доступа."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
@@ -171,5 +171,3 @@ msgstr "Ваш палец находился не по центру, попро�
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Уберите палец и попробуйте провести ещё раз"
-
-

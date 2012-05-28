@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 # Pavol Šimo <palo.simo@gmail.com>, 2011.
 msgid ""
 msgstr ""
@@ -9,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
 "POT-Creation-Date: 2011-04-18 17:52+0100\n"
 "PO-Revision-Date: 2011-04-28 10:19+0000\n"
-"Last-Translator: palos <palo.simo@gmail.com>\n"
-"Language-Team: Slovak (http://www.transifex.net/projects/p/freedesktop/team/sk/)\n"
+"Last-Translator: Pavol Šimo <palo.simo@gmail.com>\n"
+"Language-Team: Slovak (http://www.transifex.net/projects/p/freedesktop/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,9 +24,7 @@ msgstr "Zaregistrovať nové odtlačky prstov"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr ""
-"Na registrovanie nových odtlačkov prstov pre iných používateľov sú potrebné "
-"oprávnenia."
+msgstr "Na registrovanie nových odtlačkov prstov pre iných používateľov sú potrebné oprávnenia."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Privileges are required to enroll new fingerprints."
@@ -172,5 +171,3 @@ msgstr "Prst nebol položený na stred, skúste prstom prejsť znova"
 #: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Zodvihnite svoj prst a skúste ním prejsť znova"
-
-
