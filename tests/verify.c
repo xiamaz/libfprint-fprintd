@@ -120,7 +120,7 @@ static void verify_finger_selected(GObject *object, const char *name, void *user
 
 static void do_verify(DBusGProxy *dev)
 {
-	GError *error;
+	GError *error = NULL;
 	gboolean verify_completed = FALSE;
 
 	dbus_g_proxy_add_signal(dev, "VerifyStatus", G_TYPE_STRING, G_TYPE_BOOLEAN, NULL);
