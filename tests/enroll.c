@@ -82,7 +82,7 @@ static void enroll_result(GObject *object, const char *result, gboolean done, vo
 
 static void do_enroll(DBusGProxy *dev)
 {
-	GError *error;
+	GError *error = NULL;
 	gboolean enroll_completed = FALSE;
 
 	dbus_g_proxy_add_signal(dev, "EnrollStatus", G_TYPE_STRING, G_TYPE_BOOLEAN, NULL);
