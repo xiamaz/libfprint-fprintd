@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Richard Hughes <richard@hughsie.com>, 2011.
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2011-04-18 17:52+0100\n"
-"PO-Revision-Date: 2010-11-30 07:44+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-02-08 12:50+0000\n"
+"PO-Revision-Date: 2012-05-29 17:10+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
 msgid "Enroll new fingerprints"
@@ -51,122 +53,220 @@ msgstr "Перед використанням пристрій не було з�
 msgid "Device already in use by another user"
 msgstr "Пристрій вже використовується іншим користувачем"
 
-#: ../pam/fingerprint-strings.h:28
+#: ../pam/fingerprint-strings.h:31
+msgid "Place your finger on the fingerprint reader"
+msgstr "Прикладіть ваш палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Place your finger on %s"
+msgstr "Прикладіть ваш палець на %s"
+
+#: ../pam/fingerprint-strings.h:33
+msgid "Swipe your finger across the fingerprint reader"
+msgstr "Проведіть вашим пальцем вздовж пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Swipe your finger across %s"
+msgstr "Проведіть вашим пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:36
+msgid "Place your left thumb on the fingerprint reader"
+msgstr "Прикладіть ваш лівий великий палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:37
 #, c-format
 msgid "Place your left thumb on %s"
 msgstr "Прикладіть лівий великий палець до %s"
 
-#: ../pam/fingerprint-strings.h:28
-#, c-format
-msgid "Swipe your left thumb on %s"
-msgstr "Натисніть лівим великим пальцем на %s"
+#: ../pam/fingerprint-strings.h:38
+msgid "Swipe your left thumb across the fingerprint reader"
+msgstr "Проведіть вашим лівим великим пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:29
+#: ../pam/fingerprint-strings.h:39
+#, c-format
+msgid "Swipe your left thumb across %s"
+msgstr "Проведіть вашим лівим великим пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:41
+msgid "Place your left index finger on the fingerprint reader"
+msgstr "Прикладіть ваш лівий вказівний палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:42
 #, c-format
 msgid "Place your left index finger on %s"
 msgstr "Прикладіть лівий вказівний палець до %s"
 
-#: ../pam/fingerprint-strings.h:29
-#, c-format
-msgid "Swipe your left index finger on %s"
-msgstr "Натисніть лівим вказівним пальцем на %s"
+#: ../pam/fingerprint-strings.h:43
+msgid "Swipe your left index finger across the fingerprint reader"
+msgstr "Проведіть вашим лівим вказівним пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:30
+#: ../pam/fingerprint-strings.h:44
+#, c-format
+msgid "Swipe your left index finger across %s"
+msgstr "Проведіть вашим лівим вказівним пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:46
+msgid "Place your left middle finger on the fingerprint reader"
+msgstr "Прикладіть ваш лівий середній палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:47
 #, c-format
 msgid "Place your left middle finger on %s"
 msgstr "Прикладіть лівий середній палець до %s"
 
-#: ../pam/fingerprint-strings.h:30
-#, c-format
-msgid "Swipe your left middle finger on %s"
-msgstr "Натисніть лівим середнім пальцем на %s"
+#: ../pam/fingerprint-strings.h:48
+msgid "Swipe your left middle finger across the fingerprint reader"
+msgstr "Проведіть вашим лівим середнім пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:31
+#: ../pam/fingerprint-strings.h:49
+#, c-format
+msgid "Swipe your left middle finger across %s"
+msgstr "Проведіть вашим лівим середнім пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:51
+msgid "Place your left ring finger on the fingerprint reader"
+msgstr "Прикладіть ваш лівий безіменний палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:52
 #, c-format
 msgid "Place your left ring finger on %s"
 msgstr "Прикладіть лівий безіменний палець до %s"
 
-#: ../pam/fingerprint-strings.h:31
-#, c-format
-msgid "Swipe your left ring finger on %s"
-msgstr "Натисніть лівим безіменним пальцем на %s"
+#: ../pam/fingerprint-strings.h:53
+msgid "Swipe your left ring finger across the fingerprint reader"
+msgstr "Проведіть вашим лівим безіменним пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:32
+#: ../pam/fingerprint-strings.h:54
+#, c-format
+msgid "Swipe your left ring finger across %s"
+msgstr "Проведіть вашим лівим безіменним пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:56
+msgid "Place your left little finger on the fingerprint reader"
+msgstr "Прикладіть ваш лівий мізинець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:57
 #, c-format
 msgid "Place your left little finger on %s"
 msgstr "Прикладіть лівий мізинець до %s"
 
-#: ../pam/fingerprint-strings.h:32
-#, c-format
-msgid "Swipe your left little finger on %s"
-msgstr "Натисніть лівим мізинцем на %s"
+#: ../pam/fingerprint-strings.h:58
+msgid "Swipe your left little finger across the fingerprint reader"
+msgstr "Проведіть вашим лівим мізинцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:33
+#: ../pam/fingerprint-strings.h:59
+#, c-format
+msgid "Swipe your left little finger across %s"
+msgstr "Проведіть вашим лівим мізинцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:61
+msgid "Place your right thumb on the fingerprint reader"
+msgstr "Прикладіть ваш правий великий палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:62
 #, c-format
 msgid "Place your right thumb on %s"
 msgstr "Прикладіть правий великий палець до %s"
 
-#: ../pam/fingerprint-strings.h:33
-#, c-format
-msgid "Swipe your right thumb on %s"
-msgstr "Натисніть правим великим пальцем на %s"
+#: ../pam/fingerprint-strings.h:63
+msgid "Swipe your right thumb across the fingerprint reader"
+msgstr "Проведіть вашим правим великим пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:34
+#: ../pam/fingerprint-strings.h:64
+#, c-format
+msgid "Swipe your right thumb across %s"
+msgstr "Проведіть вашим правим великим пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:66
+msgid "Place your right index finger on the fingerprint reader"
+msgstr "Прикладіть ваш правий вказівний палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:67
 #, c-format
 msgid "Place your right index finger on %s"
 msgstr "Прикладіть правий вказівний палець до %s"
 
-#: ../pam/fingerprint-strings.h:34
-#, c-format
-msgid "Swipe your right index finger on %s"
-msgstr "Натисніть правим вказівним пальцем на %s"
+#: ../pam/fingerprint-strings.h:68
+msgid "Swipe your right index finger across the fingerprint reader"
+msgstr "Проведіть вашим правим вказівним пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:35
+#: ../pam/fingerprint-strings.h:69
+#, c-format
+msgid "Swipe your right index finger across %s"
+msgstr "Проведіть вашим правим вказівним пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:71
+msgid "Place your right middle finger on the fingerprint reader"
+msgstr "Прикладіть ваш правий середній палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:72
 #, c-format
 msgid "Place your right middle finger on %s"
 msgstr "Прикладіть правий середній палець до %s"
 
-#: ../pam/fingerprint-strings.h:35
-#, c-format
-msgid "Swipe your right middle finger on %s"
-msgstr "Натисніть правим середнім пальцем на %s"
+#: ../pam/fingerprint-strings.h:73
+msgid "Swipe your right middle finger across the fingerprint reader"
+msgstr "Проведіть вашим правим середнім пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:36
+#: ../pam/fingerprint-strings.h:74
+#, c-format
+msgid "Swipe your right middle finger across %s"
+msgstr "Проведіть вашим правим середнім пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:76
+msgid "Place your right ring finger on the fingerprint reader"
+msgstr "Прикладіть ваш правий безіменний палець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:77
 #, c-format
 msgid "Place your right ring finger on %s"
 msgstr "Прикладіть правий безіменний палець до %s"
 
-#: ../pam/fingerprint-strings.h:36
-#, c-format
-msgid "Swipe your right ring finger on %s"
-msgstr "Натисніть правим безіменним пальцем на %s"
+#: ../pam/fingerprint-strings.h:78
+msgid "Swipe your right ring finger across the fingerprint reader"
+msgstr "Проведіть вашим правим безіменним пальцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:37
+#: ../pam/fingerprint-strings.h:79
+#, c-format
+msgid "Swipe your right ring finger across %s"
+msgstr "Проведіть вашим правим безіменним пальцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:81
+msgid "Place your right little finger on the fingerprint reader"
+msgstr "Прикладіть ваш правий мізинець до пристрою для зчитування"
+
+#: ../pam/fingerprint-strings.h:82
 #, c-format
 msgid "Place your right little finger on %s"
 msgstr "Прикладіть правий мізинець до %s"
 
-#: ../pam/fingerprint-strings.h:37
-#, c-format
-msgid "Swipe your right little finger on %s"
-msgstr "Натисніть правим мізинцем на %s"
+#: ../pam/fingerprint-strings.h:83
+msgid "Swipe your right little finger across the fingerprint reader"
+msgstr "Проведіть вашим правим мізинцем вздовж пристрою для зчитування"
 
-#: ../pam/fingerprint-strings.h:72 ../pam/fingerprint-strings.h:98
+#: ../pam/fingerprint-strings.h:84
+#, c-format
+msgid "Swipe your right little finger across %s"
+msgstr "Проведіть вашим правим мізинцем вздовж %s"
+
+#: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
 msgid "Place your finger on the reader again"
 msgstr "Прикладіть ваш палець до пристрою зчитування ще раз"
 
-#: ../pam/fingerprint-strings.h:74 ../pam/fingerprint-strings.h:100
+#: ../pam/fingerprint-strings.h:128 ../pam/fingerprint-strings.h:154
 msgid "Swipe your finger again"
 msgstr "Натисніть вашим пальцем ще раз"
 
-#: ../pam/fingerprint-strings.h:77 ../pam/fingerprint-strings.h:103
+#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
 msgid "Swipe was too short, try again"
 msgstr "Натискання було занадто коротким, повторіть спробу"
 
-#: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
+#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Your finger was not centered, try swiping your finger again"
 msgstr "Ваш палець було розташовано не у центрі, спробуйте натиснути пальцем ще раз"
 
-#: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
+#: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Приберіть ваш палець і повторіть спробу натискання"

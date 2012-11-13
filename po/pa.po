@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2011-04-18 17:52+0100\n"
-"PO-Revision-Date: 2012-02-23 02:12+0000\n"
+"POT-Creation-Date: 2012-02-08 12:50+0000\n"
+"PO-Revision-Date: 2012-07-10 17:08+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.net/projects/p/freedesktop/language/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/freedesktop/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pa\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
 msgid "Enroll new fingerprints"
@@ -52,122 +52,220 @@ msgstr "ਜੰਤਰ ਪਹਿਲਾਂ ਕਦੇ ਵਰਤਿਆ ਨਹੀਂ �
 msgid "Device already in use by another user"
 msgstr "ਜੰਤਰ ਕਿਸੇ ਹੋਰ ਯੂਜ਼ਰ ਵਲੋਂ ਪਹਿਲਾਂ ਹੀ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ"
 
-#: ../pam/fingerprint-strings.h:28
+#: ../pam/fingerprint-strings.h:31
+msgid "Place your finger on the fingerprint reader"
+msgstr "ਆਪਣੀ ਉਂਗਲ ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ ਉੱਤੇ ਰੱਖੋ"
+
+#: ../pam/fingerprint-strings.h:32
+#, c-format
+msgid "Place your finger on %s"
+msgstr "ਆਪਣੀ ਉਂਗਲ %s ਉੱਤੇ ਰੱਖੋ ਜੀ"
+
+#: ../pam/fingerprint-strings.h:33
+msgid "Swipe your finger across the fingerprint reader"
+msgstr "ਆਪਣੀ ਉਂਗਲ ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ ਉੱਤੇ ਘਸਾਉ"
+
+#: ../pam/fingerprint-strings.h:34
+#, c-format
+msgid "Swipe your finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:36
+msgid "Place your left thumb on the fingerprint reader"
+msgstr "ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ ਉੱਤੇ ਆਪਣਾ ਖੱਬਾ ਅੰਗੂਠਾ ਰੱਖੋ"
+
+#: ../pam/fingerprint-strings.h:37
 #, c-format
 msgid "Place your left thumb on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣਾ ਖੱਬਾ ਅੰਗੂਠਾ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:28
-#, c-format
-msgid "Swipe your left thumb on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣਾ ਖੱਬਾ ਅੰਗੂਠਾ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:38
+msgid "Swipe your left thumb across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:29
+#: ../pam/fingerprint-strings.h:39
+#, c-format
+msgid "Swipe your left thumb across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:41
+msgid "Place your left index finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:42
 #, c-format
 msgid "Place your left index finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਇੰਡੈਸਕ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:29
-#, c-format
-msgid "Swipe your left index finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਇੰਡੈਕਸ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:43
+msgid "Swipe your left index finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:30
+#: ../pam/fingerprint-strings.h:44
+#, c-format
+msgid "Swipe your left index finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:46
+msgid "Place your left middle finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:47
 #, c-format
 msgid "Place your left middle finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਵਿਚਕਾਰਲੀ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:30
-#, c-format
-msgid "Swipe your left middle finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਵਿਚਕਾਰਲੀ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:48
+msgid "Swipe your left middle finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:31
+#: ../pam/fingerprint-strings.h:49
+#, c-format
+msgid "Swipe your left middle finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:51
+msgid "Place your left ring finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:52
 #, c-format
 msgid "Place your left ring finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਮੁੰਦਰੀ ਵਾਲੀ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:31
-#, c-format
-msgid "Swipe your left ring finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਮੁੰਦਰੀ ਵਾਲੀ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:53
+msgid "Swipe your left ring finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:32
+#: ../pam/fingerprint-strings.h:54
+#, c-format
+msgid "Swipe your left ring finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:56
+msgid "Place your left little finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:57
 #, c-format
 msgid "Place your left little finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਚੀਚੀ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:32
-#, c-format
-msgid "Swipe your left little finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਖੱਬੀ ਚੀਚੀ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:58
+msgid "Swipe your left little finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:33
+#: ../pam/fingerprint-strings.h:59
+#, c-format
+msgid "Swipe your left little finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:61
+msgid "Place your right thumb on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:62
 #, c-format
 msgid "Place your right thumb on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣਾ ਸੱਜਾ ਅੰਗੂਠਾ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:33
-#, c-format
-msgid "Swipe your right thumb on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣਾ ਸੱਜਾ ਅੰਗੂਠਾ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:63
+msgid "Swipe your right thumb across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:34
+#: ../pam/fingerprint-strings.h:64
+#, c-format
+msgid "Swipe your right thumb across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:66
+msgid "Place your right index finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:67
 #, c-format
 msgid "Place your right index finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਇੰਡੈਕਸ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:34
-#, c-format
-msgid "Swipe your right index finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਇੰਡੈਕਸ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:68
+msgid "Swipe your right index finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:35
+#: ../pam/fingerprint-strings.h:69
+#, c-format
+msgid "Swipe your right index finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:71
+msgid "Place your right middle finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:72
 #, c-format
 msgid "Place your right middle finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਵਿਚਕਾਰਲੀ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:35
-#, c-format
-msgid "Swipe your right middle finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਵਿਚਕਾਰਲੀ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:73
+msgid "Swipe your right middle finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:36
+#: ../pam/fingerprint-strings.h:74
+#, c-format
+msgid "Swipe your right middle finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:76
+msgid "Place your right ring finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:77
 #, c-format
 msgid "Place your right ring finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਮੁੰਦਰੀ ਵਾਲੀ ਉਂਗਲ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:36
-#, c-format
-msgid "Swipe your right ring finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਮੁੰਦਰੀ ਵਾਲੀ ਉਂਗਲ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:78
+msgid "Swipe your right ring finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:37
+#: ../pam/fingerprint-strings.h:79
+#, c-format
+msgid "Swipe your right ring finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:81
+msgid "Place your right little finger on the fingerprint reader"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:82
 #, c-format
 msgid "Place your right little finger on %s"
 msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਚੀਚੀ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:37
-#, c-format
-msgid "Swipe your right little finger on %s"
-msgstr "%s ਉੱਤੇ ਆਪਣੀ ਸੱਜੀ ਚੀਚੀ ਲਗਾਉ"
+#: ../pam/fingerprint-strings.h:83
+msgid "Swipe your right little finger across the fingerprint reader"
+msgstr ""
 
-#: ../pam/fingerprint-strings.h:72 ../pam/fingerprint-strings.h:98
+#: ../pam/fingerprint-strings.h:84
+#, c-format
+msgid "Swipe your right little finger across %s"
+msgstr ""
+
+#: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
 msgid "Place your finger on the reader again"
 msgstr "ਰੀਡਰ ਉੱਤੇ ਆਪਣੀ ਉਂਗਲ ਮੁੜ ਰੱਖੋ"
 
-#: ../pam/fingerprint-strings.h:74 ../pam/fingerprint-strings.h:100
+#: ../pam/fingerprint-strings.h:128 ../pam/fingerprint-strings.h:154
 msgid "Swipe your finger again"
 msgstr "ਆਪਣੀ ਉਂਗਲ ਮੁੜ ਘਸਾਉ"
 
-#: ../pam/fingerprint-strings.h:77 ../pam/fingerprint-strings.h:103
+#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
 msgid "Swipe was too short, try again"
-msgstr ""
+msgstr "ਉਂਗਲ ਥੋੜੀ ਘਸਾਈ ਹੈ, ਫੇਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: ../pam/fingerprint-strings.h:79 ../pam/fingerprint-strings.h:105
+#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr ""
+msgstr "ਤੁਹਾਡੀ ਉਂਗਲ ਕੇਂਦਰ ਵਿੱਚ ਨਹੀਂ ਸੀ, ਆਪਣੀ ਉਂਗਲ ਫੇਰ ਘਸਾਉ ਜੀ"
 
-#: ../pam/fingerprint-strings.h:81 ../pam/fingerprint-strings.h:107
+#: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
 msgid "Remove your finger, and try swiping your finger again"
-msgstr ""
+msgstr "ਆਪਣੀ ਉਂਗਲ ਘਸਾਉ ਅਤੇ ਫੇਰ ਆਪਣੀ ਉਂਗਲ ਦੁਬਾਰਾ ਘਸਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
