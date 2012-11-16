@@ -7,4 +7,6 @@ intltoolize -c -f || exit 1
 libtoolize -c || exit 1
 autoconf || exit 1
 automake -a -c || exit 1
-./configure $*
+if test -z "$NOCONFIGURE"; then
+	./configure $*
+fi
