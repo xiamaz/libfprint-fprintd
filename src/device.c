@@ -268,7 +268,7 @@ static void fprint_device_init(FprintDevice *device)
 	priv->id = ++last_id;
 
 	/* Setup PolicyKit */
-	priv->auth = polkit_authority_get ();
+	priv->auth = polkit_authority_get_sync (NULL, NULL);
 	priv->clients = g_hash_table_new_full (g_str_hash,
 					       g_str_equal,
 					       g_free,
