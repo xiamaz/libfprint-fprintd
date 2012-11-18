@@ -50,8 +50,8 @@ AC_MSG_RESULT([$has_pam])
 
 AC_CHECK_PROG([XMLLINT], [xmllint], [xmllint])
 AC_CHECK_PROG([XSLTPROC], [xsltproc], [xsltproc])
-AC_CHECK_PROG([POD2MAN], [pod2man], [xsltproc])
-AM_CONDITIONAL(BUILD_MAN, test "$POD2MAN" != "x")
+AC_CHECK_PROG([POD2MAN], [pod2man], [pod2man])
+AM_CONDITIONAL(BUILD_MAN, test x"$POD2MAN" != "x")
 
 GTK_DOC_CHECK([1.3])
 
