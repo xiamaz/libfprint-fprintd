@@ -2,3 +2,4 @@
 Name=net.reactivated.Fprint
 Exec=@LIBEXECDIR@/fprintd
 User=root
+SystemdService=fprintd.service

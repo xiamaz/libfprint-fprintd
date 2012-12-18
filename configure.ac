@@ -55,6 +55,15 @@ AM_CONDITIONAL(BUILD_MAN, test x"$POD2MAN" != "x")
 
 GTK_DOC_CHECK([1.3])
 
+AC_ARG_WITH([systemdsystemunitdir],
+            AS_HELP_STRING([--with-systemdsystemunitdir=DIR], [Directory for systemd service files]),
+            [],
+            [with_systemdsystemunitdir=$($PKG_CONFIG --variable=systemdsystemunitdir systemd)])
+AS_IF([test "x$with_systemdsystemunitdir" != "xno"], [
+  AC_SUBST([systemdsystemunitdir], [$with_systemdsystemunitdir])
+])
+AM_CONDITIONAL(HAVE_SYSTEMD, [test -n "$systemdsystemunitdir"])
+
 AS_AC_EXPAND(DATADIR, $datadir)
 
 DBUS_SERVICES_DIR="$DATADIR/dbus-1/services"
