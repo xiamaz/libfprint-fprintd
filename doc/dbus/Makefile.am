@@ -1,5 +1,5 @@
 
-all : net.reactivated.Fprint.Manager.ref.xml net.reactivated.Fprint.Device.ref.xml
+noinst_DATA = net.reactivated.Fprint.Manager.ref.xml net.reactivated.Fprint.Device.ref.xml
 
 net.reactivated.Fprint.Manager.ref.xml : $(top_srcdir)/src/manager.xml $(top_srcdir)/doc/dbus/spec-to-docbook.xsl
 	echo "<?xml version=\"1.0\"?>""<!DOCTYPE refentry PUBLIC \"-//OASIS//DTD DocBook XML V4.1.2//EN\" \"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd\">" > $@
