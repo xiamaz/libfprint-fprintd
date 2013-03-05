@@ -1,6 +1,13 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.5.0:
+- Don't use a device name if there's only one reader
+- Avoid possible crash when trying to login without devices
+- Fix possible crashes due to uninitialised variables
+- Fix hang when the machine has no USB bus
+- Add a systemd unit file
+
 version 0.4.1:
 - Enable gtk-doc by default so that file aren't
   missing in the tarball
