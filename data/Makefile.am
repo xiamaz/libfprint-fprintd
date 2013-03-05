@@ -36,7 +36,7 @@ fprintd.1: fprintd.pod
 endif
 
 EXTRA_DIST = $(dbus_services_in_files) $(dbus_conf_DATA) $(polkit_in_files) $(conf_DATA) $(systemdservice_in_files) fprintd.pod
-CLEANFILES = $(polkit_DATA) $(dbus_services_DATA) fprintd.1
+CLEANFILES = $(polkit_DATA) $(dbus_services_DATA) $(systemdservice_DATA) fprintd.1
 
 check:
 	@$(XMLLINT) --noout $(polkit_DATA)
