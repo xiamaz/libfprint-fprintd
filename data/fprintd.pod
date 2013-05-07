@@ -4,7 +4,7 @@ fprintd - Fingerprint management daemon, and test applications
 
 =head1 SYNOPSYS
 
-B<fprintd-enroll> [username]
+B<fprintd-enroll> [-f finger] [usename]
 
 B<fprintd-list> username [usernames...]
 

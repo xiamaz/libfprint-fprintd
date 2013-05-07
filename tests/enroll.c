@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include <dbus/dbus-glib-bindings.h>
 #include "manager-dbus-glue.h"
 #include "device-dbus-glue.h"
@@ -25,6 +26,8 @@
 
 static DBusGProxy *manager = NULL;
 static DBusGConnection *connection = NULL;
+static char *finger_name = "right-index-finger";
+static char **usernames = NULL;
 
 static void create_manager(void)
 {
@@ -89,8 +92,8 @@ static void do_enroll(DBusGProxy *dev)
 	dbus_g_proxy_connect_signal(dev, "EnrollStatus", G_CALLBACK(enroll_result),
 				    &enroll_completed, NULL);
 
-	g_print("Enrolling right index finger.\n");
-	if (!net_reactivated_Fprint_Device_enroll_start(dev, "right-index-finger", &error)) {
+	g_print("Enrolling %s finger.\n", finger_name);
+	if (!net_reactivated_Fprint_Device_enroll_start(dev, finger_name, &error)) {
 		g_print("EnrollStart failed: %s\n", error->message);
 		exit (1);
 	}
@@ -116,22 +119,35 @@ static void release_device(DBusGProxy *dev)
 	}
 }
 
+static const GOptionEntry entries[] = {
+    { "finger", 'f',  0, G_OPTION_ARG_STRING, &finger_name, "Finger selected to verify (default is automatic)", NULL },
+    { G_OPTION_REMAINING, '\0', 0, G_OPTION_ARG_STRING_ARRAY, &usernames, NULL, "[username]" },
+    { NULL }
+};
+
 int main(int argc, char **argv)
 {
+	GOptionContext *context;
+	GError *err = NULL;
 	DBusGProxy *dev;
-	char *username;
 
 	g_type_init();
 
 	dbus_g_object_register_marshaller (fprintd_marshal_VOID__STRING_BOOLEAN,
 					   G_TYPE_NONE, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_INVALID);
 
+	context = g_option_context_new ("Enroll a fingerprint");
+	g_option_context_add_main_entries (context, entries, NULL);
+
+	if (g_option_context_parse (context, &argc, &argv, &err) == FALSE) {
+		g_print ("couldn't parse command-line options: %s\n", err->message);
+		g_error_free (err);
+		return 1;
+	}
+
 	create_manager();
 
-	username = NULL;
-	if (argc == 2)
-		username = argv[1];
-	dev = open_device(username);
+	dev = open_device(usernames ? usernames[0] : NULL);
 	do_enroll(dev);
 	release_device(dev);
 	return 0;
