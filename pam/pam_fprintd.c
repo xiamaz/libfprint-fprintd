@@ -317,6 +317,9 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev, gbool
 		data->timed_out = FALSE;
 
 		if (!dbus_g_proxy_call (dev, "VerifyStart", &error, G_TYPE_STRING, "any", G_TYPE_INVALID, G_TYPE_INVALID)) {
+			if (dbus_g_error_has_name(error, "net.reactivated.Fprint.Error.NoEnrolledPrints"))
+				ret = PAM_USER_UNKNOWN;
+
 			D(pamh, "VerifyStart failed: %s", error->message);
 			g_error_free (error);
 
