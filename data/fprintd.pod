@@ -100,3 +100,6 @@ By default, fprintd stores the fingerprints in B</var/lib/fprint/>
 =over 8
 
 =item B<dbus-daemon>, B<gnome-about-me>
+
+=back
+
