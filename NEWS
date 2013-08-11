@@ -1,6 +1,11 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.5.1:
+- Add max_tries and timeout arguments to PAM module
+- Add ability to require the fingerprint for enrolled users
+- Add "-f <finger>" option to enroll utilities
+
 version 0.5.0:
 - Don't use a device name if there's only one reader
 - Avoid possible crash when trying to login without devices
