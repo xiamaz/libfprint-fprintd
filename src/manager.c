@@ -79,7 +79,6 @@ static gchar *get_device_path(FprintDevice *rdev)
 static gboolean
 fprint_manager_timeout_cb (FprintManager *manager)
 {
-	g_message ("No devices in use, exit");
 	//FIXME kill all the devices
 	exit(0);
 	return FALSE;
