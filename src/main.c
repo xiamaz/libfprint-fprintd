@@ -358,17 +358,17 @@ int main(int argc, char **argv)
 		goto err;
 	}
 
-	g_print("Launching FprintObject\n");
+	g_debug("Launching FprintObject");
 
 	/* create the one instance of the Manager object to be shared between
 	 * all fprintd users */
 	manager = fprint_manager_new(no_timeout);
 
-	g_message("D-Bus service launched with name: %s", FPRINT_SERVICE_NAME);
+	g_debug("D-Bus service launched with name: %s", FPRINT_SERVICE_NAME);
 
-	g_message("entering main loop");
+	g_debug("entering main loop");
 	g_main_loop_run(loop);
-	g_message("main loop completed");
+	g_debug("main loop completed");
 
 	g_object_unref (manager);
 
