@@ -170,6 +170,17 @@ static void close_and_unref (DBusGConnection *connection)
 	dbus_g_connection_unref (connection);
 }
 
+static void unref_loop (GMainLoop *loop)
+{
+	GMainContext *ctx;
+
+	/* The main context was created separately, so
+	 * we'll need to unref it ourselves */
+	ctx = g_main_loop_get_context (loop);
+	g_main_loop_unref (loop);
+	g_main_context_unref (ctx);
+}
+
 #define DBUS_TYPE_G_OBJECT_PATH_ARRAY (dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_OBJECT_PATH))
 
 static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, const char *username, gboolean *has_multiple_devices)
@@ -397,13 +408,13 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 	dev = open_device(pamh, connection, manager, username, &has_multiple_devices);
 	g_object_unref (manager);
 	if (!dev) {
-		g_main_loop_unref (loop);
+		unref_loop (loop);
 		close_and_unref (connection);
 		return PAM_AUTHINFO_UNAVAIL;
 	}
 	ret = do_verify(loop, pamh, dev, has_multiple_devices);
 
-	g_main_loop_unref (loop);
+	unref_loop (loop);
 	release_device(pamh, dev);
 	g_object_unref (dev);
 	close_and_unref (connection);
