@@ -9,7 +9,7 @@ fprintd_verify_CFLAGS = $(WARN_CFLAGS) $(GLIB_CFLAGS)
 fprintd_verify_LDADD = $(GLIB_LIBS)
 
 fprintd_enroll_SOURCES = enroll.c $(MARSHALFILES)
-fprintd_enroll_CFLAGS = $(WARN_CFLAGS) $(GLIB_CFLAGS)
+fprintd_enroll_CFLAGS = $(WARN_CFLAGS) $(GLIB_CFLAGS) -I$(top_srcdir)/pam
 fprintd_enroll_LDADD = $(GLIB_LIBS)
 
 fprintd_list_SOURCES = list.c

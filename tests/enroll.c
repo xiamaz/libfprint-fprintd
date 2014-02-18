@@ -24,6 +24,10 @@
 #include "device-dbus-glue.h"
 #include "marshal.h"
 
+#define N_(x) x
+#define TR(x) x
+#include "fingerprint-strings.h"
+
 static DBusGProxy *manager = NULL;
 static DBusGConnection *connection = NULL;
 static char *finger_name = "right-index-finger";
@@ -87,10 +91,34 @@ static void do_enroll(DBusGProxy *dev)
 {
 	GError *error = NULL;
 	gboolean enroll_completed = FALSE;
+	gboolean found;
+	guint i;
 
 	dbus_g_proxy_add_signal(dev, "EnrollStatus", G_TYPE_STRING, G_TYPE_BOOLEAN, NULL);
 	dbus_g_proxy_connect_signal(dev, "EnrollStatus", G_CALLBACK(enroll_result),
 				    &enroll_completed, NULL);
+
+	found = FALSE;
+	for (i = 0; fingers[i].dbus_name != NULL; i++) {
+		if (g_strcmp0 (fingers[i].dbus_name, finger_name) == 0) {
+			found = TRUE;
+			break;
+		}
+	}
+	if (!found) {
+		GString *s;
+
+		s = g_string_new (NULL);
+		g_string_append_printf (s, "Invalid finger name '%s'. Name must be one of ", finger_name);
+		for (i = 0; fingers[i].dbus_name != NULL; i++) {
+			g_string_append_printf (s, "%s", fingers[i].dbus_name);
+			if (fingers[i + 1].dbus_name != NULL)
+				g_string_append (s, ", ");
+		}
+		g_warning ("%s", s->str);
+		g_string_free (s, TRUE);
+		exit (1);
+	}
 
 	g_print("Enrolling %s finger.\n", finger_name);
 	if (!net_reactivated_Fprint_Device_enroll_start(dev, finger_name, &error)) {
