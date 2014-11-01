@@ -27,7 +27,7 @@
 
 static DBusGProxy *manager = NULL;
 static DBusGConnection *connection = NULL;
-static char *finger_name = "any";
+static char *finger_name = NULL;
 static gboolean g_fatal_warnings = FALSE;
 static char **usernames = NULL;
 
@@ -99,7 +99,7 @@ static void find_finger(DBusGProxy *dev, const char *username)
 		g_print(" - #%d: %s\n", i, fingers[i]);
 	}
 
-	if (strcmp (finger_name, "any") == 0) {
+	if (finger_name == NULL || strcmp (finger_name, "any") == 0) {
 		g_free (finger_name);
 		finger_name = g_strdup (fingers[0]);
 	}
