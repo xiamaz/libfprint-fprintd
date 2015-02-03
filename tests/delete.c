@@ -95,7 +95,7 @@ static void process_devices(char **argv)
 		guint j;
 		DBusGProxy *dev;
 
-		path = g_ptr_array_index(devices, 0);
+		path = g_ptr_array_index(devices, i);
 		g_print("Using device %s\n", path);
 
 		/* FIXME use for_name_owner?? */
