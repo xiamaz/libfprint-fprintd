@@ -159,15 +159,19 @@ static gboolean fprint_manager_get_devices(FprintManager *manager,
 	GPtrArray **devices, GError **error)
 {
 	FprintManagerPrivate *priv = FPRINT_MANAGER_GET_PRIVATE (manager);
-	GSList *elem = priv->dev_registry;
+	GSList *elem = g_slist_reverse(g_slist_copy(priv->dev_registry));
+	GSList *l;
 	int num_open = g_slist_length(elem);
 	GPtrArray *devs = g_ptr_array_sized_new(num_open);
 
-	if (num_open > 0)
-		do {
-			FprintDevice *rdev = elem->data;
+	if (num_open > 0) {
+		for (l = elem; l != NULL; l = l->next) {
+			FprintDevice *rdev = l->data;
 			g_ptr_array_add(devs, get_device_path(rdev));
-		} while ((elem = g_slist_next(elem)) != NULL);
+		}
+	}
+
+	g_slist_free(elem);
 
 	*devices = devs;
 	return TRUE;
@@ -181,7 +185,7 @@ static gboolean fprint_manager_get_default_device(FprintManager *manager,
 	int num_open = g_slist_length(elem);
 
 	if (num_open > 0) {
-		*device = get_device_path (elem->data);
+		*device = get_device_path (g_slist_last (elem)->data);
 		return TRUE;
 	} else {
 		g_set_error (error, FPRINT_ERROR, FPRINT_ERROR_NO_SUCH_DEVICE,
