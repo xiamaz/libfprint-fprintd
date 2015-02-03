@@ -1,6 +1,15 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.6.0:
+- Fix warning in fprintd.pod file
+- Reduce logging during normal operation
+- Fix eventfd leak in PAM module
+- List possible values for finger when enrolling
+- Fix possible crash in fprintd-verify
+- Fix listing and deleting fingerprints when there's more than
+  one reader available
+
 version 0.5.1:
 - Add max_tries and timeout arguments to PAM module
 - Add ability to require the fingerprint for enrolled users
