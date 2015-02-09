@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Milo Casagrande <milo@ubuntu.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/freedesktop/language/it/)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
+"Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/fprintd/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "Verifica una impronta"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "Sono richiesti dei privilegi per verificare le impronte."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "Registra nuove impronte"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Sono richiesti dei privilegi per registrare nuove impronte per altri utenti."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "Sono richiesti dei privilegi per registrare nuove impronte."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "Sono richiesti dei privilegi per verificare le impronte."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "Seleziona un utente da registrare"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Verifica una impronta"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "Sono richiesti dei privilegi per registrare nuove impronte per altri utenti."
 
 #: ../src/device.c:385
 #, c-format
@@ -53,25 +54,25 @@ msgstr "Un altro utente sta già usando il device"
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il dito sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your finger on %s"
-msgstr ""
+msgstr "Posizionare il dito su %s"
 
 #: ../pam/fingerprint-strings.h:33
 msgid "Swipe your finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare il dito sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Swipe your finger across %s"
-msgstr ""
+msgstr "Passare il dito su %s"
 
 #: ../pam/fingerprint-strings.h:36
 msgid "Place your left thumb on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il pollice sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
@@ -80,16 +81,16 @@ msgstr "Posizionare il pollice sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:38
 msgid "Swipe your left thumb across the fingerprint reader"
-msgstr ""
+msgstr "Passare il pollice sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:39
 #, c-format
 msgid "Swipe your left thumb across %s"
-msgstr ""
+msgstr "Passare il pollice sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:41
 msgid "Place your left index finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare l'indice sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:42
 #, c-format
@@ -98,16 +99,16 @@ msgstr "Posizionare l'indice sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:43
 msgid "Swipe your left index finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare l'indice sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:44
 #, c-format
 msgid "Swipe your left index finger across %s"
-msgstr ""
+msgstr "Passare l'indice sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:46
 msgid "Place your left middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il medio sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:47
 #, c-format
@@ -116,16 +117,16 @@ msgstr "Posizionare il medio sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:48
 msgid "Swipe your left middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare il medio sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:49
 #, c-format
 msgid "Swipe your left middle finger across %s"
-msgstr ""
+msgstr "Passare il medio sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:51
 msgid "Place your left ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare l'anulare sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:52
 #, c-format
@@ -134,16 +135,16 @@ msgstr "Posizionare l'anulare sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:53
 msgid "Swipe your left ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare l'anulare sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:54
 #, c-format
 msgid "Swipe your left ring finger across %s"
-msgstr ""
+msgstr "Passare l'anulare sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:56
 msgid "Place your left little finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il mignolo sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:57
 #, c-format
@@ -152,16 +153,16 @@ msgstr "Posizionare il mignolo sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:58
 msgid "Swipe your left little finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare il mignolo sinistro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:59
 #, c-format
 msgid "Swipe your left little finger across %s"
-msgstr ""
+msgstr "Passare il mignolo sinistro su %s"
 
 #: ../pam/fingerprint-strings.h:61
 msgid "Place your right thumb on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il pollice destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:62
 #, c-format
@@ -170,16 +171,16 @@ msgstr "Posizionare il pollice destro su %s"
 
 #: ../pam/fingerprint-strings.h:63
 msgid "Swipe your right thumb across the fingerprint reader"
-msgstr ""
+msgstr "Passare il pollice destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:64
 #, c-format
 msgid "Swipe your right thumb across %s"
-msgstr ""
+msgstr "Passare il pollice destro su %s"
 
 #: ../pam/fingerprint-strings.h:66
 msgid "Place your right index finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare l'indice destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:67
 #, c-format
@@ -188,16 +189,16 @@ msgstr "Posizionare l'indice destro su %s"
 
 #: ../pam/fingerprint-strings.h:68
 msgid "Swipe your right index finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare l'indice destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:69
 #, c-format
 msgid "Swipe your right index finger across %s"
-msgstr ""
+msgstr "Passare l'indice destro su %s"
 
 #: ../pam/fingerprint-strings.h:71
 msgid "Place your right middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il medio destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:72
 #, c-format
@@ -206,16 +207,16 @@ msgstr "Posizionare il medio destro su %s"
 
 #: ../pam/fingerprint-strings.h:73
 msgid "Swipe your right middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare il medio destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:74
 #, c-format
 msgid "Swipe your right middle finger across %s"
-msgstr ""
+msgstr "Passare il medio destro su %s"
 
 #: ../pam/fingerprint-strings.h:76
 msgid "Place your right ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare l'anulare destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:77
 #, c-format
@@ -224,16 +225,16 @@ msgstr "Posizionare l'anulare destro su %s"
 
 #: ../pam/fingerprint-strings.h:78
 msgid "Swipe your right ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare l'anulare destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:79
 #, c-format
 msgid "Swipe your right ring finger across %s"
-msgstr ""
+msgstr "Passare l'anulare destro su %s"
 
 #: ../pam/fingerprint-strings.h:81
 msgid "Place your right little finger on the fingerprint reader"
-msgstr ""
+msgstr "Posizionare il mignolo destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:82
 #, c-format
@@ -242,12 +243,12 @@ msgstr "Posizionare il mignolo destro su %s"
 
 #: ../pam/fingerprint-strings.h:83
 msgid "Swipe your right little finger across the fingerprint reader"
-msgstr ""
+msgstr "Passare il mignolo destro sul lettore di impronte"
 
 #: ../pam/fingerprint-strings.h:84
 #, c-format
 msgid "Swipe your right little finger across %s"
-msgstr ""
+msgstr "Passare il mignolo destro su %s"
 
 #: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
 msgid "Place your finger on the reader again"

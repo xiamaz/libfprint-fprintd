@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Serbian (http://www.transifex.com/projects/p/freedesktop/language/sr/)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2014-11-22 10:45+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/projects/p/fprintd/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,236 +19,236 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
-msgid "Enroll new fingerprints"
-msgstr "Учитај нови отисак прста"
+msgid "Verify a fingerprint"
+msgstr "Провери отисак прста"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Потребна су овлашћења за учитавање отиска прста за остале кориснике."
+msgid "Privileges are required to verify fingerprints."
+msgstr "Потребна су овлашћења за проверу отисака прстију."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
-msgid "Privileges are required to enroll new fingerprints."
-msgstr "Потребна су овлашћења за учитавање отиска прста."
+msgid "Enroll new fingerprints"
+msgstr "Направи нове отиске прстију"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "Потребна су овлашћења за проверу отиска прста."
+msgid "Privileges are required to enroll new fingerprints."
+msgstr "Потребна су овлашћења за стварање нових отисака прстију."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
-msgstr "Изаберите корисника ради учитавања"
+msgstr "Изабери корисника за давање отисака"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Провери отисак прста"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "Потребна су овлашћења за учитавање отисака прстију за друге кориснике."
 
 #: ../src/device.c:385
 #, c-format
 msgid "Device was not claimed before use"
-msgstr "Уређај још увек није позиван"
+msgstr "Уређај није позван пре коришћења"
 
 #: ../src/device.c:395
 #, c-format
 msgid "Device already in use by another user"
-msgstr "Неко други користи овај уређај"
+msgstr "Неки други корисник користи овај уређај"
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
-msgstr ""
+msgstr "Поставите прст на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your finger on %s"
-msgstr ""
+msgstr "Поставите прста на %s"
 
 #: ../pam/fingerprint-strings.h:33
 msgid "Swipe your finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците прст преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Swipe your finger across %s"
-msgstr ""
+msgstr "Превуците прст преко %s"
 
 #: ../pam/fingerprint-strings.h:36
 msgid "Place your left thumb on the fingerprint reader"
-msgstr ""
+msgstr "Ставите палац леве руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
 msgid "Place your left thumb on %s"
-msgstr "Поставите палац леве руке на %s"
+msgstr "Ставите палац леве руке на %s"
 
 #: ../pam/fingerprint-strings.h:38
 msgid "Swipe your left thumb across the fingerprint reader"
-msgstr ""
+msgstr "Превуците палац леве руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:39
 #, c-format
 msgid "Swipe your left thumb across %s"
-msgstr ""
+msgstr "Превуците палац леве руке преко %s"
 
 #: ../pam/fingerprint-strings.h:41
 msgid "Place your left index finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите кажипрст леве руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:42
 #, c-format
 msgid "Place your left index finger on %s"
-msgstr "Поставите кажипрст леве руке на %s"
+msgstr "Ставите кажипрст леве руке на %s"
 
 #: ../pam/fingerprint-strings.h:43
 msgid "Swipe your left index finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците кажипрст леве руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:44
 #, c-format
 msgid "Swipe your left index finger across %s"
-msgstr ""
+msgstr "Превуците кажипрст леве руке преко %s"
 
 #: ../pam/fingerprint-strings.h:46
 msgid "Place your left middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите средњи прст леве руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:47
 #, c-format
 msgid "Place your left middle finger on %s"
-msgstr "Поставите средњи прст леве руке на %s"
+msgstr "Ставите средњи прст леве руке на %s"
 
 #: ../pam/fingerprint-strings.h:48
 msgid "Swipe your left middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците средњи прст леве руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:49
 #, c-format
 msgid "Swipe your left middle finger across %s"
-msgstr ""
+msgstr "Превуците средњи прст леве руке преко %s"
 
 #: ../pam/fingerprint-strings.h:51
 msgid "Place your left ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите домали прст леве руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:52
 #, c-format
 msgid "Place your left ring finger on %s"
-msgstr "Поставите домали прст леве руке на %s"
+msgstr "Ставите домали прст леве руке на %s"
 
 #: ../pam/fingerprint-strings.h:53
 msgid "Swipe your left ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците домали прст леве руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:54
 #, c-format
 msgid "Swipe your left ring finger across %s"
-msgstr ""
+msgstr "Превуците домали прст леве руке преко %s"
 
 #: ../pam/fingerprint-strings.h:56
 msgid "Place your left little finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите мали прст леве руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:57
 #, c-format
 msgid "Place your left little finger on %s"
-msgstr "Поставите мали прст леве руке на %s"
+msgstr "Ставите мали прст леве руке на %s"
 
 #: ../pam/fingerprint-strings.h:58
 msgid "Swipe your left little finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците мали прст леве руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:59
 #, c-format
 msgid "Swipe your left little finger across %s"
-msgstr ""
+msgstr "Превуците мали прст леве руке преко %s"
 
 #: ../pam/fingerprint-strings.h:61
 msgid "Place your right thumb on the fingerprint reader"
-msgstr ""
+msgstr "Ставите палац десне руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:62
 #, c-format
 msgid "Place your right thumb on %s"
-msgstr "Поставите палац десне руке на %s"
+msgstr "Ставите палац десне руке на %s"
 
 #: ../pam/fingerprint-strings.h:63
 msgid "Swipe your right thumb across the fingerprint reader"
-msgstr ""
+msgstr "Превуците палац десне руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:64
 #, c-format
 msgid "Swipe your right thumb across %s"
-msgstr ""
+msgstr "Превуците палац десне руке преко %s"
 
 #: ../pam/fingerprint-strings.h:66
 msgid "Place your right index finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите кажипрст десне руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:67
 #, c-format
 msgid "Place your right index finger on %s"
-msgstr "Поставите кажипрст десне руке на %s"
+msgstr "Ставите кажипрст десне руке на %s"
 
 #: ../pam/fingerprint-strings.h:68
 msgid "Swipe your right index finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците кажипрст десне руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:69
 #, c-format
 msgid "Swipe your right index finger across %s"
-msgstr ""
+msgstr "Превуците кажипрст десне руке преко %s"
 
 #: ../pam/fingerprint-strings.h:71
 msgid "Place your right middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите средњи прст десне руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:72
 #, c-format
 msgid "Place your right middle finger on %s"
-msgstr "Поставите средњи прст десне руке на %s"
+msgstr "Ставите средњи прст десне руке на %s"
 
 #: ../pam/fingerprint-strings.h:73
 msgid "Swipe your right middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците средњи прст десне руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:74
 #, c-format
 msgid "Swipe your right middle finger across %s"
-msgstr ""
+msgstr "Превуците средњи прст десне руке преко %s"
 
 #: ../pam/fingerprint-strings.h:76
 msgid "Place your right ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите домали прст десне руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:77
 #, c-format
 msgid "Place your right ring finger on %s"
-msgstr "Поставите домали прст десне руке на %s"
+msgstr "Ставите домали прст десне руке на %s"
 
 #: ../pam/fingerprint-strings.h:78
 msgid "Swipe your right ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците домали прст десне руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:79
 #, c-format
 msgid "Swipe your right ring finger across %s"
-msgstr ""
+msgstr "Превуците домали прст десне руке преко %s"
 
 #: ../pam/fingerprint-strings.h:81
 msgid "Place your right little finger on the fingerprint reader"
-msgstr ""
+msgstr "Ставите мали прст десне руке на читач отисака прстију"
 
 #: ../pam/fingerprint-strings.h:82
 #, c-format
 msgid "Place your right little finger on %s"
-msgstr "Поставите мали прст десне руке на %s"
+msgstr "Ставите мали прст десне руке на %s"
 
 #: ../pam/fingerprint-strings.h:83
 msgid "Swipe your right little finger across the fingerprint reader"
-msgstr ""
+msgstr "Превуците мали прст десне руке преко читача отисака прстију"
 
 #: ../pam/fingerprint-strings.h:84
 #, c-format
 msgid "Swipe your right little finger across %s"
-msgstr ""
+msgstr "Превуците мали прст десне руке преко %s"
 
 #: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
 msgid "Place your finger on the reader again"
@@ -263,8 +264,8 @@ msgstr "Сувише сте брзо превукли прст, покушајт
 
 #: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr "Прст није био на средини читача, покушајте поново"
+msgstr "Прст није био на средини читача, покушајте поново да превучете прст"
 
 #: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
 msgid "Remove your finger, and try swiping your finger again"
-msgstr "Склоните прст и покушајте да га превучете поново"
+msgstr "Склоните прст и покушајте поново да га превучете"

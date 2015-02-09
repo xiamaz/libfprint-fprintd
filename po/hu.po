@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2012.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-09-03 12:34+0000\n"
-"Last-Translator: kelemeng <kelemeng@gnome.hu>\n"
-"Language-Team: Hungarian <openscope@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
+"Last-Translator: kelemeng <kelemeng@ubuntu.com>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/fprintd/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "Ujjlenyomat ellenőrzése"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "Jogosultság szükséges az ujjlenyomatok ellenőrzéséhez."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "Új ujjlenyomatok felvétele"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Jogosultság szükséges új ujjlenyomatok felvételéhez más felhasználóknak."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "Jogosultság szükséges új ujjlenyomatok felvételéhez."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "Jogosultság szükséges az ujjlenyomatok ellenőrzéséhez."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "Válassza ki a felveendő felhasználót"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Ujjlenyomat ellenőrzése"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "Jogosultság szükséges új ujjlenyomatok felvételéhez más felhasználóknak."
 
 #: ../src/device.c:385
 #, c-format

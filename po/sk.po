@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pavol Klačanský <pavol@klacansky.com>, 2012.
-# Pavol Šimo <palo.simo@gmail.com>, 2011.
+# pavolzetor <pavol@klacansky.com>, 2012
+# Pavol Šimo <palo.simo@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-10-14 21:49+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: pavolzetor <pavol@klacansky.com>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/freedesktop/language/sk/)\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/fprintd/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,28 +20,28 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "Overiť odtlačok prsta"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "Na overenie odtlačkov prstov sú potrebné oprávnenia."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "Zaregistrovať nové odtlačky prstov"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Na registrovanie nových odtlačkov prstov pre iných používateľov sú potrebné oprávnenia."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "Na registrovanie nových odtlačkov prstov sú potrebné oprávnenia."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "Na overenie odtlačkov prstov sú potrebné oprávnenia."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "Zvoliť používateľa na registráciu"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Overiť odtlačok prsta"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "Na registrovanie nových odtlačkov prstov pre iných používateľov sú potrebné oprávnenia."
 
 #: ../src/device.c:385
 #, c-format

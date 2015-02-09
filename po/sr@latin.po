@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/freedesktop/language/sr@latin/)\n"
+"Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/fprintd/language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
-msgid "Enroll new fingerprints"
+msgid "Verify a fingerprint"
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
+msgid "Privileges are required to verify fingerprints."
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
-msgid "Privileges are required to enroll new fingerprints."
+msgid "Enroll new fingerprints"
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
+msgid "Privileges are required to enroll new fingerprints."
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
@@ -38,7 +38,7 @@ msgid "Select a user to enroll"
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
+msgid "Privileges are required to enroll new fingerprints for other users."
 msgstr ""
 
 #: ../src/device.c:385

@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ville Skyttä <ville.skytta@iki.fi>, 2011.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
+# Ville Skyttä <ville.skytta@iki.fi>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/freedesktop/language/fi/)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/fprintd/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
-msgid "Enroll new fingerprints"
-msgstr ""
+msgid "Verify a fingerprint"
+msgstr "Tarkista sormenjälki"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
+msgid "Privileges are required to verify fingerprints."
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
-msgid "Privileges are required to enroll new fingerprints."
+msgid "Enroll new fingerprints"
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
+msgid "Privileges are required to enroll new fingerprints."
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
@@ -39,8 +40,8 @@ msgid "Select a user to enroll"
 msgstr ""
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Tarkista sormenjälki"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr ""
 
 #: ../src/device.c:385
 #, c-format
@@ -50,7 +51,7 @@ msgstr ""
 #: ../src/device.c:395
 #, c-format
 msgid "Device already in use by another user"
-msgstr ""
+msgstr "Laite on jo toisen käyttäjän käytössä"
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
@@ -72,7 +73,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:36
 msgid "Place your left thumb on the fingerprint reader"
-msgstr ""
+msgstr "Aseta vasen peukalo sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
@@ -90,7 +91,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:41
 msgid "Place your left index finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta vasen etusormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:42
 #, c-format
@@ -108,7 +109,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:46
 msgid "Place your left middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta vasen keskisormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:47
 #, c-format
@@ -126,7 +127,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:51
 msgid "Place your left ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta vasen nimetön sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:52
 #, c-format
@@ -144,7 +145,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:56
 msgid "Place your left little finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta vasen pikkusormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:57
 #, c-format
@@ -162,7 +163,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:61
 msgid "Place your right thumb on the fingerprint reader"
-msgstr ""
+msgstr "Aseta oikea peukalo sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:62
 #, c-format
@@ -180,7 +181,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:66
 msgid "Place your right index finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta oikea etusormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:67
 #, c-format
@@ -198,7 +199,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:71
 msgid "Place your right middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta oikea keskisormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:72
 #, c-format
@@ -216,7 +217,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:76
 msgid "Place your right ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta oikea nimetön sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:77
 #, c-format
@@ -234,7 +235,7 @@ msgstr ""
 
 #: ../pam/fingerprint-strings.h:81
 msgid "Place your right little finger on the fingerprint reader"
-msgstr ""
+msgstr "Aseta oikea pikkusormi sormenjälkilukijalle"
 
 #: ../pam/fingerprint-strings.h:82
 #, c-format

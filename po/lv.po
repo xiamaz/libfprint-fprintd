@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <rudolfs.mazurs@gmail.com>, 2011.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2011
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Latvian (http://www.transifex.com/projects/p/freedesktop/language/lv/)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian (http://www.transifex.com/projects/p/fprintd/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,28 +20,28 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "Pārbaudīt pirkstu nospiedumu"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "Ir nepieciešamas privilēģijas, lai pārbaudītu pirkstu nospiedumus."
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "Reģistrēt jaunus pirkstu nospiedumus"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Ir nepieciešamas privilēģijas, lai reģistrētu citu lietotāju pirkstu nospiedumus."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "Ir nepieciešamas privilēģijas, lai reģistrētu jaunus pirkstu nospiedumus."
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "Ir nepieciešamas privilēģijas, lai pārbaudītu pirkstu nospiedumus."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "Izvēlieties lietotāju, kuram reģistrēt"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "Pārbaudīt pirkstu nospiedumu"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "Ir nepieciešamas privilēģijas, lai reģistrētu citu lietotāju pirkstu nospiedumus."
 
 #: ../src/device.c:385
 #, c-format
@@ -54,25 +55,25 @@ msgstr "Ierīci jau lieto cits lietotājs"
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet pirkstu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your finger on %s"
-msgstr ""
+msgstr "Novietojiet pirkstu uz %s"
 
 #: ../pam/fingerprint-strings.h:33
 msgid "Swipe your finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet pirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Swipe your finger across %s"
-msgstr ""
+msgstr "Novelciet pirkstu gar %s"
 
 #: ../pam/fingerprint-strings.h:36
 msgid "Place your left thumb on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet kreiso īkšķi uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:37
 #, c-format
@@ -81,16 +82,16 @@ msgstr "Novietojiet kreiso īkšķi uz %s"
 
 #: ../pam/fingerprint-strings.h:38
 msgid "Swipe your left thumb across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet kreiso īkšķi gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:39
 #, c-format
 msgid "Swipe your left thumb across %s"
-msgstr ""
+msgstr "Novelciet kreiso īkšķi gar %s"
 
 #: ../pam/fingerprint-strings.h:41
 msgid "Place your left index finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet kreiso rādītājpirkstu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:42
 #, c-format
@@ -99,16 +100,16 @@ msgstr "Novietojiet savu kreiso rādītājpirkstu uz %s"
 
 #: ../pam/fingerprint-strings.h:43
 msgid "Swipe your left index finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet kreiso rādītājpirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:44
 #, c-format
 msgid "Swipe your left index finger across %s"
-msgstr ""
+msgstr "Novelciet kreiso rādītājpirkstu gar %s"
 
 #: ../pam/fingerprint-strings.h:46
 msgid "Place your left middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet kreiso vidējo pirkstu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:47
 #, c-format
@@ -117,16 +118,16 @@ msgstr "Novietojiet savu kreiso vidējo pirkstu uz %s"
 
 #: ../pam/fingerprint-strings.h:48
 msgid "Swipe your left middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet kreiso vidējo pirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:49
 #, c-format
 msgid "Swipe your left middle finger across %s"
-msgstr ""
+msgstr "Novelciet kreiso vidējo pirkstu gar %s"
 
 #: ../pam/fingerprint-strings.h:51
 msgid "Place your left ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet kreiso zeltnesi uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:52
 #, c-format
@@ -135,16 +136,16 @@ msgstr "Novietojiet savu kreiso zeltnesi uz %s"
 
 #: ../pam/fingerprint-strings.h:53
 msgid "Swipe your left ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet kreiso zeltnesi gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:54
 #, c-format
 msgid "Swipe your left ring finger across %s"
-msgstr ""
+msgstr "Novelciet kreiso zeltnesi gar %s"
 
 #: ../pam/fingerprint-strings.h:56
 msgid "Place your left little finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet kreiso mazo pirkstiņu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:57
 #, c-format
@@ -153,16 +154,16 @@ msgstr "Novietojiet savu kreiso mazo pirkstiņu uz %s"
 
 #: ../pam/fingerprint-strings.h:58
 msgid "Swipe your left little finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet kreiso mazo pirkstiņu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:59
 #, c-format
 msgid "Swipe your left little finger across %s"
-msgstr ""
+msgstr "Novelciet kreiso mazo pirkstiņu gar %s"
 
 #: ../pam/fingerprint-strings.h:61
 msgid "Place your right thumb on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet labo īkšķi uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:62
 #, c-format
@@ -171,16 +172,16 @@ msgstr "Novietojiet labo īkšķi uz %s"
 
 #: ../pam/fingerprint-strings.h:63
 msgid "Swipe your right thumb across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet labo rādītājpirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:64
 #, c-format
 msgid "Swipe your right thumb across %s"
-msgstr ""
+msgstr "Novelciet labo īkšķi gar %s"
 
 #: ../pam/fingerprint-strings.h:66
 msgid "Place your right index finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet labo rādītājpirkstu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:67
 #, c-format
@@ -189,16 +190,16 @@ msgstr "Novietojiet savu labo rādītājpirkstu uz %s"
 
 #: ../pam/fingerprint-strings.h:68
 msgid "Swipe your right index finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet labo rādītājpirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:69
 #, c-format
 msgid "Swipe your right index finger across %s"
-msgstr ""
+msgstr "Novelciet labo rādītājpirkstu gar %s"
 
 #: ../pam/fingerprint-strings.h:71
 msgid "Place your right middle finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet labo vidējo pirkstu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:72
 #, c-format
@@ -207,16 +208,16 @@ msgstr "Novietojiet savu labo vidējo pirkstu uz %s"
 
 #: ../pam/fingerprint-strings.h:73
 msgid "Swipe your right middle finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet labo vidējo pirkstu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:74
 #, c-format
 msgid "Swipe your right middle finger across %s"
-msgstr ""
+msgstr "Novelciet labo vidējo pirkstu gar %s"
 
 #: ../pam/fingerprint-strings.h:76
 msgid "Place your right ring finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet labo zeltnesi uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:77
 #, c-format
@@ -225,16 +226,16 @@ msgstr "Novietojiet savu labo zeltnesi uz %s"
 
 #: ../pam/fingerprint-strings.h:78
 msgid "Swipe your right ring finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet labo zeltnesi gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:79
 #, c-format
 msgid "Swipe your right ring finger across %s"
-msgstr ""
+msgstr "Novelciet labo zeltnesi gar %s"
 
 #: ../pam/fingerprint-strings.h:81
 msgid "Place your right little finger on the fingerprint reader"
-msgstr ""
+msgstr "Novietojiet labo mazo pirkstiņu uz pirkstu nospiedumu lasītāja"
 
 #: ../pam/fingerprint-strings.h:82
 #, c-format
@@ -243,12 +244,12 @@ msgstr "Novietojiet savu labo mazo pirkstiņu uz %s"
 
 #: ../pam/fingerprint-strings.h:83
 msgid "Swipe your right little finger across the fingerprint reader"
-msgstr ""
+msgstr "Novelciet labo mazo pirkstiņu gar pirkstu nospiedumu lasītāju"
 
 #: ../pam/fingerprint-strings.h:84
 #, c-format
 msgid "Swipe your right little finger across %s"
-msgstr ""
+msgstr "Novelciet labo mazo pirkstiņu gar %s"
 
 #: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
 msgid "Place your finger on the reader again"

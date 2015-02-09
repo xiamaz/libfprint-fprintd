@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <wantinghard@gmail.com>, 2011.
+# Wylmer Wang <wantinghard@gmail.com>, 2011
+# Wylmer Wang <wantinghard@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-05-28 13:24+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
-"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
+"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/fprintd/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,28 +20,28 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "验证一条指纹"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "验证指纹需要更高的权限。"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "登记新的指纹"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "需要更高的权限来为其他用户登记指纹。"
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "需要更高的权限来登记新的指纹。"
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "验证指纹需要更高的权限。"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "选择"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "验证一条指纹"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "需要更高的权限来为其他用户登记指纹。"
 
 #: ../src/device.c:385
 #, c-format
@@ -54,12 +55,12 @@ msgstr "设备正由另一用户使用"
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
-msgstr ""
+msgstr "将您的手指放在指纹阅读器上"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your finger on %s"
-msgstr ""
+msgstr "将您的手指放在 %s 上"
 
 #: ../pam/fingerprint-strings.h:33
 msgid "Swipe your finger across the fingerprint reader"

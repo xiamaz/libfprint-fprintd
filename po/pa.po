@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# A S Alam <apreet.alam@gmail.com>, 2012.
+# A S Alam <apreet.alam@gmail.com>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=libfprint\n"
-"POT-Creation-Date: 2012-02-08 12:50+0000\n"
-"PO-Revision-Date: 2012-07-10 17:08+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/freedesktop/language/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/fprintd/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:1
+msgid "Verify a fingerprint"
+msgstr "ਉਂਗਲ-ਨਿਸ਼ਾਨ ਦੀ ਜਾਂਚ"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:2
+msgid "Privileges are required to verify fingerprints."
+msgstr "ਉਂਗਲ-ਨਿਸ਼ਾਨ ਜਾਂਚ ਕਰਨ ਲਈ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ।"
+
+#: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
 msgstr "ਨਵੇਂ ਉਂਗਲ-ਨਿਸ਼ਾਨ ਲਵੋ"
 
-#: ../data/net.reactivated.fprint.device.policy.in.h:2
-msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "ਹੋਰ ਯੂਜ਼ਰ ਲਈ ਨਵੇਂ ਉਂਗਲ-ਨਿਸ਼ਾਨ ਲੈਣ ਲਈ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ।"
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:3
+#: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
 msgstr "ਨਵੇਂ ਉਂਗਲ-ਨਿਸ਼ਾਨ ਲੈਣ ਲਈ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ।"
-
-#: ../data/net.reactivated.fprint.device.policy.in.h:4
-msgid "Privileges are required to verify fingerprints."
-msgstr "ਉਂਗਲ-ਨਿਸ਼ਾਨ ਜਾਂਚ ਕਰਨ ਲਈ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ।"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
 msgstr "ਚਾਲੂ ਕਰਨ ਲਈ ਯੂਜ਼ਰ ਚੁਣੋ"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
-msgid "Verify a fingerprint"
-msgstr "ਉਂਗਲ-ਨਿਸ਼ਾਨ ਦੀ ਜਾਂਚ"
+msgid "Privileges are required to enroll new fingerprints for other users."
+msgstr "ਹੋਰ ਯੂਜ਼ਰ ਲਈ ਨਵੇਂ ਉਂਗਲ-ਨਿਸ਼ਾਨ ਲੈਣ ਲਈ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ।"
 
 #: ../src/device.c:385
 #, c-format
@@ -68,7 +68,7 @@ msgstr "ਆਪਣੀ ਉਂਗਲ ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ �
 #: ../pam/fingerprint-strings.h:34
 #, c-format
 msgid "Swipe your finger across %s"
-msgstr ""
+msgstr "ਆਪਣੀ ਉਂਗਲ %s ਉੱਤੇ ਪੂਰੀ ਘਸਾਉ"
 
 #: ../pam/fingerprint-strings.h:36
 msgid "Place your left thumb on the fingerprint reader"
