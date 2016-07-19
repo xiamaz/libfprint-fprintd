@@ -85,6 +85,9 @@ struct {
 	{ NULL, NULL, NULL, NULL, NULL }
 };
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+
 static char *finger_str_to_msg(const char *finger_name, const char *driver_name, gboolean is_swipe)
 {
 	int i;
@@ -110,6 +113,8 @@ static char *finger_str_to_msg(const char *finger_name, const char *driver_name,
 
 	return NULL;
 }
+
+#pragma GCC diagnostic pop
 
 /* Cases not handled:
  * verify-no-match
