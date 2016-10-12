@@ -1,6 +1,10 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.7.0:
+- Fix crash in the daemon when cancelling PAM conversation
+- Fix build warnings and update translations
+
 version 0.6.0:
 - Fix warning in fprintd.pod file
 - Reduce logging during normal operation
