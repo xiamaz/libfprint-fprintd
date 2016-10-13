@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"POT-Creation-Date: 2016-10-13 17:12+0200\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: thanos <tomtryf@gmail.com>\n"
-"Language-Team: Greek (http://www.transifex.com/projects/p/fprintd/language/el/)\n"
+"Language-Team: Greek (http://www.transifex.com/freedesktop/fprintd/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -251,22 +251,22 @@ msgstr "Περάστε το δεξιό σας μικρό δάκτυλο π
 msgid "Swipe your right little finger across %s"
 msgstr "Περάστε το δεξιό σας μικρό δάκτυλο πάνω από το %s"
 
-#: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
+#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
 msgid "Place your finger on the reader again"
 msgstr "Τοποθετήστε ξανά το δάκτυλό σας στον αναγνώστη"
 
-#: ../pam/fingerprint-strings.h:128 ../pam/fingerprint-strings.h:154
+#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Swipe your finger again"
 msgstr "Περάστε ξανά το δάκτυλο σας"
 
-#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
+#: ../pam/fingerprint-strings.h:136 ../pam/fingerprint-strings.h:162
 msgid "Swipe was too short, try again"
 msgstr "Το πέρασμα ήταν πολύ σύντομο, προσπαθήστε ξανά"
 
-#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
+#: ../pam/fingerprint-strings.h:138 ../pam/fingerprint-strings.h:164
 msgid "Your finger was not centered, try swiping your finger again"
 msgstr "Το δάκτυλο σας δεν ήταν κεντραρισμένο, προσπαθήστε να περάσετε ξανά το δάκτυλο σας"
 
-#: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
+#: ../pam/fingerprint-strings.h:140 ../pam/fingerprint-strings.h:166
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Απομακρύνετε το δάκτυλο σας και προσπαθήστε να το ξαναπεράσετε"

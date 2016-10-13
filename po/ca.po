@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015
 # xavier <catala.xavier@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 17:17+0100\n"
-"PO-Revision-Date: 2013-11-20 10:37+0000\n"
-"Last-Translator: Gil Forcada <gforcada@gnome.org>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/fprintd/language/ca/)\n"
+"POT-Creation-Date: 2016-10-13 17:12+0200\n"
+"PO-Revision-Date: 2015-10-11 18:50+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"Language-Team: Catalan (http://www.transifex.com/freedesktop/fprintd/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,23 +25,23 @@ msgstr "Comprova una empremta"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:2
 msgid "Privileges are required to verify fingerprints."
-msgstr "Calen privilegis per verificar empremtes"
+msgstr "Es requereixen privilegis per verificar empremtes."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:3
 msgid "Enroll new fingerprints"
-msgstr "Dona d'alta empremtes noves"
+msgstr "Inscriu empremtes noves"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:4
 msgid "Privileges are required to enroll new fingerprints."
-msgstr "Calen privilegis per donar d'alta empremtes noves"
+msgstr "Es requereixen privilegis per inscriure empremtes noves."
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:5
 msgid "Select a user to enroll"
-msgstr "Tria un usuari per a donar-lo d'alta"
+msgstr "Selecciona un usuari per inscriure"
 
 #: ../data/net.reactivated.fprint.device.policy.in.h:6
 msgid "Privileges are required to enroll new fingerprints for other users."
-msgstr "Calen privilegis per donar d'alta noves empremtes per a altres usuaris."
+msgstr "Es requereixen privilegis per inscriure noves empremtes per a altres usuaris."
 
 #: ../src/device.c:385
 #, c-format
@@ -250,22 +251,22 @@ msgstr "Passeu el dit petit dret pel lector d'empremtes"
 msgid "Swipe your right little finger across %s"
 msgstr "Passeu el dit petit dret per %s"
 
-#: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
+#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
 msgid "Place your finger on the reader again"
 msgstr "Poseu el dit un altre cop al lector"
 
-#: ../pam/fingerprint-strings.h:128 ../pam/fingerprint-strings.h:154
+#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Swipe your finger again"
 msgstr "Passeu el dit un altre cop"
 
-#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
+#: ../pam/fingerprint-strings.h:136 ../pam/fingerprint-strings.h:162
 msgid "Swipe was too short, try again"
 msgstr "Lectura incorrecta, torneu-ho a intentar"
 
-#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
+#: ../pam/fingerprint-strings.h:138 ../pam/fingerprint-strings.h:164
 msgid "Your finger was not centered, try swiping your finger again"
-msgstr "No tenieu el dit centrat, passeu-lo un altre cop"
+msgstr "El dit no estava centrat, intenteu passar el dit de nou"
 
-#: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
+#: ../pam/fingerprint-strings.h:140 ../pam/fingerprint-strings.h:166
 msgid "Remove your finger, and try swiping your finger again"
-msgstr "Retireu el dit i torneu-lo a passar un altre cop"
+msgstr "Retireu el dit i intenteu passar el dit de nou"

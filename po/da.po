@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 17:17+0100\n"
+"POT-Creation-Date: 2016-10-13 17:12+0200\n"
 "PO-Revision-Date: 2013-12-21 18:41+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/fprintd/language/da/)\n"
+"Language-Team: Danish (http://www.transifex.com/freedesktop/fprintd/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -250,22 +250,22 @@ msgstr "Rul din højre lillefinger over fingeraftrykslæseren"
 msgid "Swipe your right little finger across %s"
 msgstr "Rul din højre lillefinger over %s"
 
-#: ../pam/fingerprint-strings.h:126 ../pam/fingerprint-strings.h:152
+#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
 msgid "Place your finger on the reader again"
 msgstr "Placer din finger på læseren igen"
 
-#: ../pam/fingerprint-strings.h:128 ../pam/fingerprint-strings.h:154
+#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
 msgid "Swipe your finger again"
 msgstr "Rul din finger igen"
 
-#: ../pam/fingerprint-strings.h:131 ../pam/fingerprint-strings.h:157
+#: ../pam/fingerprint-strings.h:136 ../pam/fingerprint-strings.h:162
 msgid "Swipe was too short, try again"
 msgstr "Rul var for kort, prøv igen"
 
-#: ../pam/fingerprint-strings.h:133 ../pam/fingerprint-strings.h:159
+#: ../pam/fingerprint-strings.h:138 ../pam/fingerprint-strings.h:164
 msgid "Your finger was not centered, try swiping your finger again"
 msgstr "Din finger var ikke centreret, prøv at rul din finger igen"
 
-#: ../pam/fingerprint-strings.h:135 ../pam/fingerprint-strings.h:161
+#: ../pam/fingerprint-strings.h:140 ../pam/fingerprint-strings.h:166
 msgid "Remove your finger, and try swiping your finger again"
 msgstr "Fjern din finger, og prøv at rul din finger igen"
