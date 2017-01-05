@@ -41,10 +41,6 @@
 
 #define DIR_PERMS 0700
 
-#ifndef FILE_STORAGE_PATH
-#define FILE_STORAGE_PATH "/var/lib/fprint/"
-#endif
-
 #define FP_FINGER_IS_VALID(finger) \
 	((finger) >= LEFT_THUMB && (finger) <= RIGHT_LITTLE)
 
