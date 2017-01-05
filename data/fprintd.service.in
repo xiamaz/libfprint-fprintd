@@ -6,3 +6,23 @@ Documentation=man:fprintd(1)
 Type=dbus
 BusName=net.reactivated.Fprint
 ExecStart=@libexecdir@/fprintd
+
+# Filesystem lockdown
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectControlGroups=true
+ReadWritePaths=@localstatedir@/lib/fprint
+ProtectHome=true
+PrivateTmp=true
+
+# Network
+PrivateNetwork=true
+
+# Execute Mappings
+MemoryDenyWriteExecute=true
+
+# Modules
+ProtectKernelModules=true
+
+# Real-time
+RestrictRealtime=true
