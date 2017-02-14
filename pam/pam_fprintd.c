@@ -433,7 +433,9 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc,
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-	g_type_init ();
+#if !GLIB_CHECK_VERSION (2, 36, 0)
+	g_type_init();
+#endif
 
 	dbus_g_object_register_marshaller (fprintd_marshal_VOID__STRING_BOOLEAN,
 					   G_TYPE_NONE, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_INVALID);
