@@ -402,7 +402,7 @@ static gboolean
 _fprint_device_check_polkit_for_action (FprintDevice *rdev, DBusGMethodInvocation *context, const char *action, GError **error)
 {
 	FprintDevicePrivate *priv = DEVICE_GET_PRIVATE(rdev);
-	const char *sender;
+	char *sender;
 	PolkitSubject *subject;
 	PolkitAuthorizationResult *result;
 	GError *_error = NULL;
@@ -410,6 +410,7 @@ _fprint_device_check_polkit_for_action (FprintDevice *rdev, DBusGMethodInvocatio
 	/* Check that caller is privileged */
 	sender = dbus_g_method_get_sender (context);
 	subject = polkit_system_bus_name_new (sender);
+	g_free (sender);
 
 	result = polkit_authority_check_authorization_sync (priv->auth,
                                                             subject,
