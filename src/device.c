@@ -604,7 +604,7 @@ static void dev_open_cb(struct fp_dev *dev, int status, void *user_data)
 	g_message("device %d claim status %d", priv->id, status);
 
 	if (status != 0) {
-		GError *error;
+		GError *error = NULL;
 
 		g_free (priv->sender);
 		priv->sender = NULL;
