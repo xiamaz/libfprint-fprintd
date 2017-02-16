@@ -376,6 +376,26 @@ static int do_verify(GMainLoop *loop, pam_handle_t *pamh, DBusGProxy *dev, gbool
 	return ret;
 }
 
+static gboolean user_has_prints(DBusGProxy *dev, const char *username)
+{
+	char **fingers;
+	gboolean have_prints;
+
+	if (!dbus_g_proxy_call (dev, "ListEnrolledFingers", NULL,
+				G_TYPE_STRING, username, G_TYPE_INVALID,
+				G_TYPE_STRV, &fingers, G_TYPE_INVALID)) {
+		/* If ListEnrolledFingers fails then verification should
+		 * also fail (both use the same underlying call), so we
+		 * report FALSE here and bail out early.  */
+		return FALSE;
+	}
+
+	have_prints = fingers != NULL && g_strv_length (fingers) > 0;
+	g_strfreev (fingers);
+
+	return have_prints;
+}
+
 static void release_device(pam_handle_t *pamh, DBusGProxy *dev)
 {
 	GError *error = NULL;
@@ -404,8 +424,9 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 	DBusGConnection *connection;
 	DBusGProxy *dev;
 	GMainLoop *loop;
+	gboolean have_prints;
 	gboolean has_multiple_devices;
-	int ret;
+	int ret = PAM_AUTHINFO_UNAVAIL;
 
 	manager = create_manager (pamh, &connection, &loop);
 	if (manager == NULL)
@@ -419,17 +440,17 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 		return PAM_AUTHINFO_UNAVAIL;
 	}
 
-	if (!claim_device(pamh, dev, username)) {
-		unref_loop(loop);
-		g_object_unref(dev);
-		close_and_unref(connection);
-		return PAM_AUTHINFO_UNAVAIL;
+	have_prints = user_has_prints(dev, username);
+	D(pamh, "prints registered: %s\n", have_prints ? "yes" : "no");
+
+	if (have_prints) {
+		if (claim_device (pamh, dev, username)) {
+			ret = do_verify (loop, pamh, dev, has_multiple_devices);
+			release_device (pamh, dev);
+		}
 	}
 
-	ret = do_verify(loop, pamh, dev, has_multiple_devices);
-
 	unref_loop (loop);
-	release_device(pamh, dev);
 	g_object_unref (dev);
 	close_and_unref (connection);
 
