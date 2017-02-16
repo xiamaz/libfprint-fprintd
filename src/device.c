@@ -612,6 +612,7 @@ static void dev_open_cb(struct fp_dev *dev, int status, void *user_data)
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_INTERNAL,
 			"Open failed with error %d", status);
 		dbus_g_method_return_error(session->context_claim_device, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -633,6 +634,7 @@ static void fprint_device_claim(FprintDevice *rdev,
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_ALREADY_IN_USE,
 			    "Device was already claimed");
 		dbus_g_method_return_error(context, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -659,6 +661,7 @@ static void fprint_device_claim(FprintDevice *rdev,
 		g_free (sender);
 		g_free (user);
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
@@ -685,6 +688,7 @@ static void fprint_device_claim(FprintDevice *rdev,
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_INTERNAL,
 			"Could not attempt device open, error %d", r);
 		dbus_g_method_return_error(context, error);
+		g_error_free(error);
 	}
 }
 
@@ -718,6 +722,7 @@ static void fprint_device_release(FprintDevice *rdev,
 
 	if (_fprint_device_check_claimed(rdev, context, &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -727,6 +732,7 @@ static void fprint_device_release(FprintDevice *rdev,
 						     "net.reactivated.fprint.device.enroll",
 						     &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -830,6 +836,7 @@ static void fprint_device_verify_start(FprintDevice *rdev,
 			g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_NO_ENROLLED_PRINTS,
 				    "No fingerprints enrolled");
 			dbus_g_method_return_error(context, error);
+			g_error_free(error);
 			return;
 		}
 		if (fp_dev_supports_identification(priv->dev)) {
@@ -883,6 +890,7 @@ static void fprint_device_verify_start(FprintDevice *rdev,
 			g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_INTERNAL,
 				    "No such print %d", finger_num);
 			dbus_g_method_return_error(context, error);
+			g_error_free(error);
 			return;
 		}
 
@@ -907,6 +915,7 @@ static void fprint_device_verify_start(FprintDevice *rdev,
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_INTERNAL,
 			"Verify start failed with error %d", r);
 		dbus_g_method_return_error(context, error);
+		g_error_free(error);
 		return;
 	}
 	priv->verify_data = data;
@@ -934,11 +943,13 @@ static void fprint_device_verify_stop(FprintDevice *rdev,
 
 	if (_fprint_device_check_claimed(rdev, context, &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free(error);
 		return;
 	}
 
 	if (_fprint_device_check_polkit_for_action (rdev, context, "net.reactivated.fprint.device.verify", &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -1032,11 +1043,13 @@ static void fprint_device_enroll_start(FprintDevice *rdev,
 
 	if (_fprint_device_check_claimed(rdev, context, &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
 	if (_fprint_device_check_polkit_for_action (rdev, context, "net.reactivated.fprint.device.enroll", &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
@@ -1062,6 +1075,7 @@ static void fprint_device_enroll_start(FprintDevice *rdev,
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_INTERNAL,
 			"Enroll start failed with error %d", r);
 		dbus_g_method_return_error(context, error);
+		g_error_free(error);
 		return;
 	}
 
@@ -1084,11 +1098,13 @@ static void fprint_device_enroll_stop(FprintDevice *rdev,
 
 	if (_fprint_device_check_claimed(rdev, context, &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
 	if (_fprint_device_check_polkit_for_action (rdev, context, "net.reactivated.fprint.device.enroll", &error) == FALSE) {
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
@@ -1141,6 +1157,7 @@ static void fprint_device_list_enrolled_fingers(FprintDevice *rdev,
 	if (_fprint_device_check_polkit_for_action (rdev, context, "net.reactivated.fprint.device.verify", &error) == FALSE) {
 		g_free (user);
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
@@ -1154,6 +1171,7 @@ static void fprint_device_list_enrolled_fingers(FprintDevice *rdev,
 		g_set_error(&error, FPRINT_ERROR, FPRINT_ERROR_NO_ENROLLED_PRINTS,
 			"Failed to discover prints");
 		dbus_g_method_return_error(context, error);
+		g_error_free (error);
 		return;
 	}
 
@@ -1192,6 +1210,7 @@ static void fprint_device_delete_enrolled_fingers(FprintDevice *rdev,
 	if (_fprint_device_check_polkit_for_action (rdev, context, "net.reactivated.fprint.device.enroll", &error) == FALSE) {
 		g_free (user);
 		dbus_g_method_return_error (context, error);
+		g_error_free (error);
 		return;
 	}
 
