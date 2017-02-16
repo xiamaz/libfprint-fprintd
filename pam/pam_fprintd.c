@@ -183,7 +183,7 @@ static void unref_loop (GMainLoop *loop)
 
 #define DBUS_TYPE_G_OBJECT_PATH_ARRAY (dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_OBJECT_PATH))
 
-static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, const char *username, gboolean *has_multiple_devices)
+static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, DBusGProxy *manager, gboolean *has_multiple_devices)
 {
 	GError *error = NULL;
 	const char *path;
@@ -216,13 +216,6 @@ static DBusGProxy *open_device(pam_handle_t *pamh, DBusGConnection *connection, 
 					"net.reactivated.Fprint",
 					path,
 					"net.reactivated.Fprint.Device");
-
-	if (!dbus_g_proxy_call (dev, "Claim", &error, G_TYPE_STRING, username, G_TYPE_INVALID, G_TYPE_INVALID)) {
-		D(pamh, "failed to claim device '%s': %s\n", path, error->message);
-		g_error_free (error);
-		g_object_unref (dev);
-		dev = NULL;
-	}
 
 	g_ptr_array_free (paths_array, TRUE);
 
@@ -392,6 +385,19 @@ static void release_device(pam_handle_t *pamh, DBusGProxy *dev)
 	}
 }
 
+static gboolean claim_device(pam_handle_t *pamh, DBusGProxy *dev, const char *username)
+{
+	GError *error = NULL;
+
+	if (!dbus_g_proxy_call (dev, "Claim", &error, G_TYPE_STRING, username, G_TYPE_INVALID, G_TYPE_INVALID)) {
+		D(pamh, "failed to claim device %s\n", error->message);
+		g_error_free (error);
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
 static int do_auth(pam_handle_t *pamh, const char *username)
 {
 	DBusGProxy *manager;
@@ -405,13 +411,21 @@ static int do_auth(pam_handle_t *pamh, const char *username)
 	if (manager == NULL)
 		return PAM_AUTHINFO_UNAVAIL;
 
-	dev = open_device(pamh, connection, manager, username, &has_multiple_devices);
+	dev = open_device(pamh, connection, manager, &has_multiple_devices);
 	g_object_unref (manager);
 	if (!dev) {
 		unref_loop (loop);
 		close_and_unref (connection);
 		return PAM_AUTHINFO_UNAVAIL;
 	}
+
+	if (!claim_device(pamh, dev, username)) {
+		unref_loop(loop);
+		g_object_unref(dev);
+		close_and_unref(connection);
+		return PAM_AUTHINFO_UNAVAIL;
+	}
+
 	ret = do_verify(loop, pamh, dev, has_multiple_devices);
 
 	unref_loop (loop);
