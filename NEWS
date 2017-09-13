@@ -1,6 +1,10 @@
 This file lists notable changes in each release. For the full history of all
 changes, see ChangeLog.
 
+version 0.8.0:
+- Lockdown the daemon to minimise potential security issues
+- Don't wake up readers when there's no enrolled fingerprints
+
 version 0.7.0:
 - Fix crash in the daemon when cancelling PAM conversation
 - Fix build warnings and update translations
