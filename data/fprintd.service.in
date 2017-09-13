@@ -26,3 +26,6 @@ ProtectKernelModules=true
 
 # Real-time
 RestrictRealtime=true
+
+# Privilege escalation
+NoNewPrivileges=true
