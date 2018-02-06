@@ -88,7 +88,7 @@ struct {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
 
-static char *finger_str_to_msg(const char *finger_name, const char *driver_name, gboolean is_swipe)
+G_GNUC_UNUSED static char *finger_str_to_msg(const char *finger_name, const char *driver_name, gboolean is_swipe)
 {
 	int i;
 
@@ -121,7 +121,7 @@ static char *finger_str_to_msg(const char *finger_name, const char *driver_name,
  * verify-match
  * verify-unknown-error
  */
-static const char *verify_result_str_to_msg(const char *result, gboolean is_swipe)
+G_GNUC_UNUSED static const char *verify_result_str_to_msg(const char *result, gboolean is_swipe)
 {
 	if (result == NULL)
 		return NULL;
@@ -147,7 +147,7 @@ static const char *verify_result_str_to_msg(const char *result, gboolean is_swip
  * enroll-failed
  * enroll-unknown-error
  */
-static const char *enroll_result_str_to_msg(const char *result, gboolean is_swipe)
+G_GNUC_UNUSED static const char *enroll_result_str_to_msg(const char *result, gboolean is_swipe)
 {
 	if (result == NULL)
 		return NULL;
