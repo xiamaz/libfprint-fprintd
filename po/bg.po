@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Alexander Shopov <ash@kambanaria.org>, 2011
+# Tony Ivanov <duskull88@fastmail.fm>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: fprintd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-13 17:12+0200\n"
-"PO-Revision-Date: 2013-11-20 10:37+0000\n"
-"Last-Translator: hadess <hadess@hadess.net>\n"
+"PO-Revision-Date: 2017-12-26 22:04+0000\n"
+"Last-Translator: Tony Ivanov <duskull88@fastmail.fm>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/freedesktop/fprintd/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,12 +55,12 @@ msgstr "Устройството е заето от друг потребите�
 
 #: ../pam/fingerprint-strings.h:31
 msgid "Place your finger on the fingerprint reader"
-msgstr ""
+msgstr "Поставете вашия пръст на четеца за пръстови отпечатъци"
 
 #: ../pam/fingerprint-strings.h:32
 #, c-format
 msgid "Place your finger on %s"
-msgstr ""
+msgstr "Поставете вашият пръст на %s"
 
 #: ../pam/fingerprint-strings.h:33
 msgid "Swipe your finger across the fingerprint reader"
