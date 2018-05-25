@@ -63,18 +63,19 @@ static gboolean source_prepare(GSource *source, gint *timeout)
 static gboolean source_check(GSource *source)
 {
 	struct fdsource *_fdsource = (struct fdsource *) source;
-	GSList *elem = _fdsource->pollfds;
+	GSList *l;
 	struct timeval tv;
 	int r;
 
-	if (!elem)
+	if (!_fdsource->pollfds)
 		return FALSE;
 
-	do {
-		GPollFD *pollfd = elem->data;
+	for (l = _fdsource->pollfds; l != NULL; l = l->next) {
+		GPollFD *pollfd = l->data;
+
 		if (pollfd->revents)
 			return TRUE;
-	} while ((elem = g_slist_next(elem)));
+	}
 
 	r = fp_get_next_timeout(&tv);
 	if (r == 1 && !timerisset(&tv))
@@ -101,15 +102,18 @@ static gboolean source_dispatch(GSource *source, GSourceFunc callback,
 static void source_finalize(GSource *source)
 {
 	struct fdsource *_fdsource = (struct fdsource *) source;
-	GSList *elem = _fdsource->pollfds;
+	GSList *l;
 
-	if (elem)
-		do {
-			GPollFD *pollfd = elem->data;
-			g_source_remove_poll((GSource *) _fdsource, pollfd);
-			g_slice_free(GPollFD, pollfd);
-			_fdsource->pollfds = g_slist_delete_link(_fdsource->pollfds, elem);
-		} while ((elem = g_slist_next(elem)));
+	if (!_fdsource->pollfds)
+		return;
+
+	for (l = _fdsource->pollfds; l != NULL; l = l->next) {
+		GPollFD *pollfd = l->data;
+
+		g_source_remove_poll((GSource *) _fdsource, pollfd);
+		g_slice_free(GPollFD, pollfd);
+		_fdsource->pollfds = g_slist_delete_link(_fdsource->pollfds, l);
+	}
 
 	g_slist_free(_fdsource->pollfds);
 }
@@ -125,7 +129,9 @@ static struct fdsource *fdsource = NULL;
 
 static void pollfd_add(int fd, short events)
 {
-	GPollFD *pollfd = g_slice_new(GPollFD);
+	GPollFD *pollfd;
+
+	pollfd = g_slice_new(GPollFD);
 	pollfd->fd = fd;
 	pollfd->events = 0;
 	pollfd->revents = 0;
@@ -140,30 +146,32 @@ static void pollfd_add(int fd, short events)
 
 static void pollfd_added_cb(int fd, short events)
 {
-	g_message("now monitoring fd %d", fd);
+	g_debug("now monitoring fd %d", fd);
 	pollfd_add(fd, events);
 }
 
 static void pollfd_removed_cb(int fd)
 {
-	GSList *elem = fdsource->pollfds;
-	g_message("no longer monitoring fd %d", fd);
+	GSList *l;
 
-	if (!elem) {
-		g_warning("cannot remove from list as list is empty?");
+	g_debug("no longer monitoring fd %d", fd);
+
+	if (!fdsource->pollfds) {
+		g_debug("cannot remove from list as list is empty?");
 		return;
 	}
 
-	do {
-		GPollFD *pollfd = elem->data;
+	for (l = fdsource->pollfds; l != NULL; l = l->next) {
+		GPollFD *pollfd = l->data;
+
 		if (pollfd->fd != fd)
 			continue;
 
 		g_source_remove_poll((GSource *) fdsource, pollfd);
 		g_slice_free(GPollFD, pollfd);
-		fdsource->pollfds = g_slist_delete_link(fdsource->pollfds, elem);
+		fdsource->pollfds = g_slist_delete_link(fdsource->pollfds, l);
 		return;
-	} while ((elem = g_slist_next(elem)));
+	}
 
 	g_error("couldn't find fd %d in list\n", fd);
 }
@@ -173,8 +181,9 @@ static int setup_pollfds(void)
 	size_t numfds;
 	size_t i;
 	struct fp_pollfd *fpfds;
-	GSource *gsource = g_source_new(&sourcefuncs, sizeof(struct fdsource));
+	GSource *gsource;
 
+	gsource = g_source_new(&sourcefuncs, sizeof(struct fdsource));
 	fdsource = (struct fdsource *) gsource;
 	fdsource->pollfds = NULL;
 
