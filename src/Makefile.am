@@ -11,6 +11,7 @@ AM_CFLAGS =						\
 	$(WARN_CFLAGS)					\
 	$(FPRINT_CFLAGS)				\
 	$(DAEMON_CFLAGS)				\
+	-DG_LOG_DOMAIN=\""fprintd"\"			\
 	-DLOCALEDIR=\""$(datadir)/locale"\"		\
 	-DPLUGINDIR=\""$(libdir)/fprintd/modules"\"	\
 	-DFILE_STORAGE_PATH=\""$(localstatedir)/lib/fprint"\"
