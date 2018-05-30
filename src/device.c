@@ -558,7 +558,12 @@ _fprint_device_client_vanished (GDBusConnection *connection,
 
 		/* Close the claimed device as well */
 		if (priv->dev) {
-			fp_async_dev_close (priv->dev, action_stop_cb, &done);
+			struct fp_dev *dev;
+
+			dev = priv->dev;
+			priv->dev = NULL;
+
+			fp_async_dev_close (dev, action_stop_cb, &done);
 			while (done == FALSE)
 				g_main_context_iteration (NULL, TRUE);
 		}
@@ -737,8 +742,13 @@ static void fprint_device_release(FprintDevice *rdev,
 	}
 
 	session->context_release_device = context;
-	if (priv->dev)
-		fp_async_dev_close(priv->dev, dev_close_cb, rdev);
+	if (priv->dev) {
+		struct fp_dev *dev;
+
+		dev = priv->dev;
+		priv->dev = NULL;
+		fp_async_dev_close(dev, dev_close_cb, rdev);
+	}
 }
 
 static void verify_cb(struct fp_dev *dev, int r, struct fp_img *img,
