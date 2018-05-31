@@ -3,9 +3,6 @@ Image transfer
 
 Verify PAM messages fit with GDM/gnome-screensaver
 
-Add some hardware protection by making sure devices aren't opened and
-reading for more than a certain amount of time.
-
 Add POS use case
 
 Automatically show the fingerprint registration when logged in and
