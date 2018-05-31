@@ -3,8 +3,6 @@ Image transfer
 
 Verify PAM messages fit with GDM/gnome-screensaver
 
-Register fprintd' po file with Transifex, Rosetta or the Translation Project
-
 Add some hardware protection by making sure devices aren't opened and
 reading for more than a certain amount of time.
 
